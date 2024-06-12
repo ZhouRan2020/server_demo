@@ -1,0 +1,11 @@
+{
+    "gameserver": {
+        "ip": "0.0.0.0",
+        "port": 8086
+    },
+  "gmserver": {
+    "ip": "127.0.0.1",
+    "port": 8088
+  },
+  "announce": "welcom to seasun teach center"
+}

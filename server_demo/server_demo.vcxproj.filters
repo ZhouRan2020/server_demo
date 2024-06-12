@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{b046cd0a-5179-4597-93ef-c92653c8a3fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="netpack">
+      <UniqueIdentifier>{87f72dbe-6b0a-4db0-b8d4-8fa5f666cf64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="codec">
+      <UniqueIdentifier>{0ea62e3b-3b4f-4d99-9fc5-7a761b4fbe59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto">
+      <UniqueIdentifier>{c784859e-2fd9-4d6b-9279-451e9493ba19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="filedb">
+      <UniqueIdentifier>{4194931a-31af-4449-8e86-8775df65fb51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cjson">
+      <UniqueIdentifier>{4e25869a-f3f9-4c0f-bc0d-6aa3c7eae0cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{92b4c21d-0e8e-4db8-8fbe-6ada2e73c7f0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utils\utils.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\netpack\nethandle.cpp">
+      <Filter>netpack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\codec\codec.cpp">
+      <Filter>codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\proto\player.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="filedb\filedb.cpp">
+      <Filter>filedb</Filter>
+    </ClCompile>
+    <ClCompile Include="player\player.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cJSON\cJSON.c">
+      <Filter>cjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\proto\syncMessage.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\proto\texus_room.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\utils\utils.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\netpack\nethandle.h">
+      <Filter>netpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\codec\codec.h">
+      <Filter>codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\proto\player.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="filedb\filedb.h">
+      <Filter>filedb</Filter>
+    </ClInclude>
+    <ClInclude Include="player\player.h">
+      <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cJSON\cJSON.h">
+      <Filter>cjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\proto\syncMessage.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="room.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\proto\texus_room.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\proto\player.proto">
+      <Filter>proto</Filter>
+    </None>
+    <None Include="..\proto\syncMessage.proto">
+      <Filter>proto</Filter>
+    </None>
+    <None Include="..\proto\texus_room.proto">
+      <Filter>proto</Filter>
+    </None>
+  </ItemGroup>
+</Project>

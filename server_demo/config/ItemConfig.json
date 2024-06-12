@@ -1,0 +1,51 @@
+{
+	"items": [{
+		"name": "道具0",
+		"introduce": "道具0很好用",
+		"price": 233,
+		"iconName": "itemIcon_0",
+		"itemID":1
+	}, {
+		"name": "道具1",
+		"introduce": "道具1很好用",
+		"price": 316,
+		"iconName": "itemIcon_1",
+		"itemID":2
+	}, {
+		"name": "道具2",
+		"introduce": "道具2很好用",
+		"price": 453,
+		"iconName": "itemIcon_2",
+		"itemID":3
+	}, {
+		"name": "道具3",
+		"introduce": "道具3很好用",
+		"price": 669,
+		"iconName": "itemIcon_3",
+		"itemID":4
+	}, {
+		"name": "道具4",
+		"introduce": "道具4很好用",
+		"price": 585,
+		"iconName": "itemIcon_4",
+		"itemID":5
+	}, {
+		"name": "道具5",
+		"introduce": "道具5很好用",
+		"price": 456,
+		"iconName": "itemIcon_5",
+		"itemID":6
+	}, {
+		"name": "道具6",
+		"introduce": "道具6很好用",
+		"price": 960,
+		"iconName": "itemIcon_6",
+		"itemID":7
+	}, {
+		"name": "道具7",
+		"introduce": "道具7很好用",
+		"price": 600,
+		"iconName": "itemIcon_7",
+		"itemID":8
+	}]
+}
