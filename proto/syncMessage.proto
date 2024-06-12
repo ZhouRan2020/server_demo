@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package TCCamp;
+
+enum CLIENT_SYNC_CMD {
+    CLIENT_INVALID = 0;
+
+    CLIENT_SYNC_DATA_SEND = 31001;
+}
+
+enum SERVER_SYNC_CMD {
+    SERVER_INVALID = 0;
+
+    SERVER_SYNC_DATA_SEND = 1201;
+
+    SERVER_NEW_PLAYER_LOGIN = 1203;
+    SERVER_PLAYER_LOGOUT = 1204;
+}
+
+message Float3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Float4 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float w = 4;
+}
+
+message PlayerSyncInfo {
+    Float3 Position = 1;
+    Float4 Rotation = 2;
+    float  Speed    = 3;
+    string PlayerID = 4;
+    bytes  PlayerName = 5;
+}
+
+message ServerSyncInfo {
+    repeated PlayerSyncInfo Players = 1;
+}

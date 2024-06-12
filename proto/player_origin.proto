@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package TCCamp;
+
+enum CLIENT_CMD {
+    CLIENT_CMD_INVALID = 0;
+    CLIENT_CMD_BEGIN = 30000;
+
+    CLIENT_PING = 30001;
+
+    CLIENT_ADD_REQ = 30003;
+
+	CLIENT_LOGIN_REQ = 30004; //客户端登录请求
+	CLIENT_CREATE_REQ = 30005; //客户端创建用户请求
+	CLIENT_ANNOUNCE_REQ = 30006; 
+
+    CLIENT_CMD_END = 33000;
+}
+
+enum SERVER_CMD {
+    SERVER_CMD_INVALID = 0;
+    SERVER_CMD_BEGIN = 1000;
+
+    SERVER_PONG = 1001;
+    SERVER_ADD_RSP = 1003;
+
+	SERVER_LOGIN_RSP = 1004;
+	SERVER_CREATE_RSP = 1005;
+	SERVER_ANNOUNCE_RSP = 1006;
+
+	GM_OPERATE_RSP = 1100;
+
+    SERVER_CMD_END = 10000;
+}
+
+message AddReq {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message AddRsp {
+    int32 A = 1;
+    int32 B = 2;
+    int32 Result = 3;
+}
+
+message PlayerLoginReq {
+	string PlayerID = 1;
+	string Password = 2;
+}
+
+message PlayerSaveData {
+	string PlayerID = 1;
+	string Password = 2;
+	bytes Name = 3;
+}
+
+message PlayerSyncData {
+	bytes Name = 1;
+}
+
+message PlayerLoginRsp {
+	int32 Result = 1;
+	string Reason = 2;
+	PlayerSyncData PlayerData = 3;
+}
+
+message PlayerCreateReq {
+	string PlayerID = 1;
+	string Password = 2;
+	bytes Name = 3;
+}
+
+message PlayerCreateRsp {
+	int32 Result = 1;
+	string PlayerID = 2;
+	bytes Name = 3;
+	string Reason = 4;
+}
+
+message SyncAnnounce {
+	bytes Announce = 1;
+}

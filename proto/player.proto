@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+package TCCamp;
+
+enum CLIENT_CMD {
+    CLIENT_CMD_INVALID = 0;
+    CLIENT_CMD_BEGIN = 30000;
+
+    CLIENT_PING = 30001;
+
+    CLIENT_ADD_REQ = 30003;
+
+	CLIENT_LOGIN_REQ = 30004; 
+	CLIENT_CREATE_REQ = 30005; 
+	CLIENT_ANNOUNCE_REQ = 30006; 
+
+    CLIENT_CMD_END = 33000;
+
+	//day4 added
+	CLIENT_GET_BACKPACK_CONTENT_REQ = 30007;
+	CLIENT_GET_SHOP_CONTENT_REQ = 30008;
+	CLIENT_BUY_ITEM_REQ = 30009;
+}
+
+enum SERVER_CMD {
+    SERVER_CMD_INVALID = 0;
+    SERVER_CMD_BEGIN = 1000;
+
+    SERVER_PONG = 1001;
+    SERVER_ADD_RSP = 1003;
+
+	SERVER_LOGIN_RSP = 1004;
+	SERVER_CREATE_RSP = 1005;
+	SERVER_ANNOUNCE_RSP = 1006;
+
+	GM_OPERATE_RSP = 1100;
+
+    SERVER_CMD_END = 10000;
+
+	//day4 added
+	SERVER_CMD_SHOP_CONTENT_RSP = 1007;
+	SERVER_CMD_BACKPACK_CONTENT_RSP = 1008;
+	SERVER_BUY_ITEM_RSP = 1009;
+}
+
+//day4 added
+enum PROTO_RESULT_CODE{
+	SERVER_LOGIN_RESULT_OK = 0;
+	SERVER_LOGIN_RESULT_FAIL = 1;
+	SERVER_LOGIN_RESULT_FAIL_NO_SUCH_PLAYER = -2;
+	SERVER_LOGIN_RESULT_FAIL_ALREADY_IN_GAME = 3;
+	SERVER_LOGIN_RESULT_FAIL_WRONG = 4;
+
+	SERVER_GET_BACKPACK_CONTENT_FAIL = 5;
+	SERVER_GET_BACKPACK_CONTENT_SUCCESS = 6;
+	SERVER_GET_SHOP_CONTENT_FAIL = 7;
+	SERVER_GET_SHOP_CONTENT_SUCCESS = 8;
+	SERVER_BUY_RESULT_SUCCESS = 9;
+	SERVER_BUY_RESULT_FAIL = 10;
+}
+message AddReq {
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message AddRsp {
+    int32 A = 1;
+    int32 B = 2;
+    int32 Result = 3;
+}
+
+message Get {
+	string PlayerID = 1;
+	string Password = 2;
+}
+
+message PlayerSaveData {
+	string PlayerID = 1;
+	string Password = 2;
+	bytes Name = 3;
+}
+
+message PlayerSyncData {
+	bytes Name = 1;
+}
+
+message PlayerLoginReq {
+	string PlayerID = 1;
+	string Password = 2;
+}
+
+message PlayerLoginRsp {
+	int32 Result = 1;
+	string Reason = 2;
+	PlayerSyncData PlayerData = 3;
+}
+
+message PlayerCreateReq {
+	string PlayerID = 1;
+	string Password = 2;
+	bytes Name = 3;
+}
+
+message PlayerCreateRsp {
+	int32 Result = 1;
+	string PlayerID = 2;
+	bytes Name = 3;
+	string Reason = 4;
+}
+
+message SyncAnnounce {
+	bytes Announce = 1;
+}
+
+message Item {
+    int32 ItemID = 1;
+    int32 Price = 2;
+	int32 HeapSize = 3;
+}
+
+message GetBackPackContentReq {
+    string PlayerID = 1;
+}
+message BackPackContentRsp{
+	int32 GetResult = 1;
+	repeated Item items = 2;
+}
+message GetShopContentReq {
+	string PlayerID = 1;//只有正在游戏中的玩家，才允许他查询shop内容
+}
+
+message ShopContentRsp{
+	int32 GetResult = 1;
+	repeated Item items = 2;
+}
+message BuyItemReq{
+	string PlayerID = 1;
+	int32 ItemID = 2;
+	int32 BuyNumber = 3;
+}
+message BuyItemRsp{
+	int32 BuyResult = 1;
+	int32 MoneyLeft = 2;
+	repeated Item UpdatedItems = 3;
+}
