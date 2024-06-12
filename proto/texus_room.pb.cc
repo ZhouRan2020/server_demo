@@ -388,7 +388,7 @@ void AddDescriptorsImpl() {
       "VER_ANNOUNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN"
       "_RSP\020\357\007\022\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SER"
       "VER_BROADCAST_SEATTABLE\020\361\007\022\023\n\016GM_OPERATE"
-      "_RSP\020\314\010\022\023\n\016SERVER_CMD_END\020\220N*\315\003\n\021PROTO_R"
+      "_RSP\020\314\010\022\023\n\016SERVER_CMD_END\020\220N*\231\004\n\021PROTO_R"
       "ESULT_CODE\022\032\n\026SERVER_LOGIN_RESULT_OK\020\000\022\034"
       "\n\030SERVER_LOGIN_RESULT_FAIL\020\001\0224\n\'SERVER_L"
       "OGIN_RESULT_FAIL_NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377"
@@ -400,10 +400,12 @@ void AddDescriptorsImpl() {
       "JOINROOM_RESULT_FAIL_BAD_PLAYERID\020\010\022-\n)J"
       "OINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED"
       "\020\t\022\026\n\022QUITROOM_RESULT_OK\020\017\022\030\n\024QUITROOM_R"
-      "ESULT_FAIL\020\020b\006proto3"
+      "ESULT_FAIL\020\020\022%\n!QUITROOM_RESULT_FAIL_NO_"
+      "SUCH_ROOM\020\021\022#\n\037QUITROOM_RESULT_FAIL_INVA"
+      "LID_ID\020\022b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1700);
+      descriptor, 1776);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "texus_room.proto", &protobuf_RegisterTypes);
 }
@@ -482,6 +484,8 @@ bool PROTO_RESULT_CODE_IsValid(int value) {
     case 9:
     case 15:
     case 16:
+    case 17:
+    case 18:
       return true;
     default:
       return false;

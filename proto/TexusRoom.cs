@@ -51,7 +51,7 @@ namespace Texus {
             "VkVSX0FOTk9VTkNFX1JTUBDuBxIaChVTRVJWRVJfSlVER0VfSk9JTl9SU1AQ",
             "7wcSGAoTU0VSVkVSX1FVSVRST09NX1JTUBDwBxIfChpTRVJWRVJfQlJPQURD",
             "QVNUX1NFQVRUQUJMRRDxBxITCg5HTV9PUEVSQVRFX1JTUBDMCBITCg5TRVJW",
-            "RVJfQ01EX0VORBCQTirNAwoRUFJPVE9fUkVTVUxUX0NPREUSGgoWU0VSVkVS",
+            "RVJfQ01EX0VORBCQTiqZBAoRUFJPVE9fUkVTVUxUX0NPREUSGgoWU0VSVkVS",
             "X0xPR0lOX1JFU1VMVF9PSxAAEhwKGFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJ",
             "TBABEjQKJ1NFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9OT19TVUNIX1BMQVlF",
             "UhD+//////////8BEiwKKFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9BTFJF",
@@ -61,7 +61,9 @@ namespace Texus {
             "UkVTVUxUX0ZBSUxfTk9fU1VDSF9ST09NEAcSJQohSk9JTlJPT01fUkVTVUxU",
             "X0ZBSUxfQkFEX1BMQVlFUklEEAgSLQopSk9JTlJPT01fUkVTVUxUX0ZBSUxf",
             "UExBWUVSX0FNT1VOVF9FWENFRUQQCRIWChJRVUlUUk9PTV9SRVNVTFRfT0sQ",
-            "DxIYChRRVUlUUk9PTV9SRVNVTFRfRkFJTBAQYgZwcm90bzM="));
+            "DxIYChRRVUlUUk9PTV9SRVNVTFRfRkFJTBAQEiUKIVFVSVRST09NX1JFU1VM",
+            "VF9GQUlMX05PX1NVQ0hfUk9PTRAREiMKH1FVSVRST09NX1JFU1VMVF9GQUlM",
+            "X0lOVkFMSURfSUQQEmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Texus.CLIENT_CMD), typeof(global::Texus.SERVER_CMD), typeof(global::Texus.PROTO_RESULT_CODE), }, new pbr::GeneratedClrTypeInfo[] {
@@ -132,6 +134,8 @@ namespace Texus {
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED")] JoinroomResultFailPlayerAmountExceed = 9,
     [pbr::OriginalName("QUITROOM_RESULT_OK")] QuitroomResultOk = 15,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL")] QuitroomResultFail = 16,
+    [pbr::OriginalName("QUITROOM_RESULT_FAIL_NO_SUCH_ROOM")] QuitroomResultFailNoSuchRoom = 17,
+    [pbr::OriginalName("QUITROOM_RESULT_FAIL_INVALID_ID")] QuitroomResultFailInvalidId = 18,
   }
 
   #endregion
