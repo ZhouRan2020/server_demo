@@ -210,8 +210,6 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		g_playerMgr.announce_request(client);
 		break;
 	}
-
-
 	case CLIENT_BUY_ITEM_REQ:
 	{
 		BuyItemReq req;
@@ -223,27 +221,26 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		g_playerMgr.send_backpack_content(client, &req);*/
 		break;
 	}
+
 	case Texus::CLIENT_CMD::CLIENT_JOIN_ROOM_REQ:
 	{
 		Texus::PlayerTryJoin tryjoin;
 		tryjoin.ParseFromArray(pack->data, pack->len);
 		cout << "JOIN REQ: playerid: " << tryjoin.playerid() << " roomid: " << tryjoin.roomid() << '\n';
+
 		User user_join{ client,tryjoin.playerid() };
 		auto room = tryjoin.roomid();
 		Texus::PlayerJoinResult joinresult;
+
 		joinresult.set_playerid(user_join.id);
 		joinresult.set_roomid(room);
+
 		if (room >= g_rooms.size()) {
 			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_NO_SUCH_ROOM);
 			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
 		}
 		else if (std::any_of(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x.id == user_join.id; })) {
 			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_EXISTING_PLAYER_INROOM);
-			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
-				auto new_seattableitem = joinresult.add_seattable();
-				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
-				new_seattableitem->set_seatnumber(i);
-			}
 			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
 		}
 		else {
@@ -254,8 +251,17 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
 				new_seattableitem->set_seatnumber(i);
 			}
+			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
+			
+			Texus::BroadcastSeatTable seattable;
+			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
+				auto new_seattableitem = seattable.add_seattable();
+				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
+				new_seattableitem->set_seatnumber(i);
+			}
 			for (auto user : g_rooms[room].users) {
-				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
+				if(user!=user_join)
+					SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_BROADCAST_SEATTABLE, &seattable);
 			}
 		}
 		break;
@@ -265,16 +271,19 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		Texus::PlayerTryQuitRoom tryquit;
 		tryquit.ParseFromArray(pack->data, pack->len);
 		cout << "QUIT REQ: playerid: " << tryquit.playerid() << " roomid: " << tryquit.roomid() << '\n';
+
 		User user_quit{ client,tryquit.playerid() };
 		auto room = tryquit.roomid();
+		
 		Texus::PlayerQuitRoomResult quitresult;
 		quitresult.set_playerid(user_quit.id);
 		quitresult.set_roomid(room);
+		
 		if (room >= g_rooms.size()) {
 			quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_FAIL);
 			SendPBToClient(user_quit.tcp, Texus::SERVER_CMD::SERVER_QUITROOM_RSP, &quitresult);
 		}
-		else if (std::none_of(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x.id == user_quit.id; })) {
+		else if (std::none_of(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x== user_quit; })) {
 			quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_FAIL);
 			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
 				auto new_seattableitem = quitresult.add_seattable();
@@ -285,16 +294,23 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		}
 		else {
 			quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_OK);
-			g_rooms[room].users.erase(std::find_if(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x.id == user_quit.id; }));
+			g_rooms[room].users.erase(std::find_if(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x == user_quit; }));
 			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
 				auto new_seattableitem = quitresult.add_seattable();
 				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
 				new_seattableitem->set_seatnumber(i);
 			}
-			for (auto user : g_rooms[room].users) {
-				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_QUITROOM_RSP, &quitresult);
-			}
 			SendPBToClient(user_quit.tcp, Texus::SERVER_CMD::SERVER_QUITROOM_RSP, &quitresult);
+
+			Texus::BroadcastSeatTable seattable;
+			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
+				auto new_seattableitem = seattable.add_seattable();
+				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
+				new_seattableitem->set_seatnumber(i);
+			}
+			for (auto user : g_rooms[room].users) {
+				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_BROADCAST_SEATTABLE, &seattable);
+			}
 		}
 		break;
 	}

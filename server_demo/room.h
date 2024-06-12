@@ -8,12 +8,15 @@ struct User {
     {
         return tcp == other.tcp && id == other.id;
     }
+    bool operator!=(User const& other)
+    {
+        return !(*this==other);
+    }
 };
 
 struct Room {
     static const int user_lim = 10;
     vector<User> users;
-
 };
 
 
