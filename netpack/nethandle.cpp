@@ -230,20 +230,16 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack) {
             if (tryjoin.roomid() >= g_rooms.size()) {
                 joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_NO_SUCH_ROOM);
                 for (int i = 0; i < g_rooms[tryjoin.roomid()].users.size(); ++i) {
-                    Texus::SeatTableItem sti;
-                    sti.set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
-                    sti.set_seatnumber(i);
-                    joinresult.mutable_seattable()->Add();
+                    joinresult.add_seattable()->set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
+                    joinresult.add_seattable()->set_seatnumber(i);
                 }
                 SendPBToClient(client, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
             }
             else if (std::find(g_rooms[tryjoin.roomid()].users.begin(), g_rooms[tryjoin.roomid()].users.end(),  user_join) != g_rooms[tryjoin.roomid()].users.end()) {
                 joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_EXISTING_PLAYER_INROOM);
                 for (int i = 0; i < g_rooms[tryjoin.roomid()].users.size(); ++i) {
-                    Texus::SeatTableItem sti;
-                    sti.set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
-                    sti.set_seatnumber(i);
-                    joinresult.mutable_seattable()->Add();
+                    joinresult.add_seattable()->set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
+                    joinresult.add_seattable()->set_seatnumber(i);
                 }
                 SendPBToClient(client, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
             }
@@ -251,10 +247,8 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack) {
                 joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_OK);
                 g_rooms[tryjoin.roomid()].users.push_back(user_join);
                 for (int i = 0; i < g_rooms[tryjoin.roomid()].users.size(); ++i) {
-                    Texus::SeatTableItem sti;
-                    sti.set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
-                    sti.set_seatnumber(i);
-                    joinresult.mutable_seattable()->Add();
+                    joinresult.add_seattable()->set_playerid(g_rooms[tryjoin.roomid()].users[i].id);
+                    joinresult.add_seattable()->set_seatnumber(i);
                 }
                 for (int i = 0; i < g_rooms[tryjoin.roomid()].users.size(); ++i) {
                     SendPBToClient(g_rooms[tryjoin.roomid()].users[i].tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
@@ -279,10 +273,8 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack) {
             else if (std::find(g_rooms[tryquit.roomid()].users.begin(), g_rooms[tryquit.roomid()].users.end(), user_quit) == g_rooms[tryquit.roomid()].users.end()) {
                 quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_FAIL);
                 for (int i = 0; i < g_rooms[tryquit.roomid()].users.size(); ++i) {
-                    Texus::SeatTableItem sti;
-                    sti.set_playerid(g_rooms[tryquit.roomid()].users[i].id);
-                    sti.set_seatnumber(i);
-                    quitresult.mutable_seattable()->add_;
+                    quitresult.add_seattable()->set_playerid(g_rooms[tryquit.roomid()].users[i].id);
+                    quitresult.add_seattable()->set_seatnumber(i);
                 }
                 SendPBToClient(client, Texus::SERVER_CMD::SERVER_QUITROOM_RSP, &quitresult);
             }
@@ -290,10 +282,8 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack) {
                 quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_OK);
                 g_rooms[tryquit.roomid()].users.erase(std::find(g_rooms[tryquit.roomid()].users.begin(), g_rooms[tryquit.roomid()].users.end(), user_quit));
                 for (int i = 0; i < g_rooms[tryquit.roomid()].users.size(); ++i) {
-                    Texus::SeatTableItem sti;
-                    sti.set_playerid(g_rooms[tryquit.roomid()].users[i].id);
-                    sti.set_seatnumber(i);
-                    quitresult.mutable_seattable()->Add();
+                    quitresult.add_seattable()->set_playerid(g_rooms[tryquit.roomid()].users[i].id);
+                    quitresult.add_seattable()->set_seatnumber(i);
                 }
                 for (int i = 0; i < g_rooms[tryquit.roomid()].users.size(); ++i) {
                     SendPBToClient(g_rooms[tryquit.roomid()].users[i].tcp, Texus::SERVER_CMD::SERVER_QUITROOM_RSP, &quitresult);
