@@ -366,7 +366,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, playerid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, roomid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, gamestartresult_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, flop_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, hole_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::Get, _internal_metadata_),
@@ -409,10 +408,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 48, -1, sizeof(::Texus::BroadcastSeatTable)},
   { 54, -1, sizeof(::Texus::GameStart)},
   { 61, -1, sizeof(::Texus::GameStartResult)},
-  { 71, -1, sizeof(::Texus::Get)},
-  { 78, -1, sizeof(::Texus::PlayerSyncData)},
-  { 84, -1, sizeof(::Texus::PlayerCreateReq)},
-  { 92, -1, sizeof(::Texus::PlayerCreateRsp)},
+  { 70, -1, sizeof(::Texus::Get)},
+  { 77, -1, sizeof(::Texus::PlayerSyncData)},
+  { 83, -1, sizeof(::Texus::PlayerCreateReq)},
+  { 91, -1, sizeof(::Texus::PlayerCreateRsp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -466,54 +465,53 @@ void AddDescriptorsImpl() {
       "Table\030\004 \003(\0132\024.Texus.SeatTableItem\022\r\n\005mon"
       "ey\030\005 \001(\005\"=\n\022BroadcastSeatTable\022\'\n\tSeatTa"
       "ble\030\001 \003(\0132\024.Texus.SeatTableItem\"-\n\tGameS"
-      "tart\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\202"
-      "\001\n\017GameStartResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006"
-      "RoomID\030\002 \001(\005\022\027\n\017GameStartResult\030\003 \001(\005\022\031\n"
-      "\004flop\030\004 \003(\0132\013.Texus.Card\022\031\n\004hole\030\005 \003(\0132\013"
-      ".Texus.Card\")\n\003Get\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010"
-      "Password\030\002 \001(\t\"\036\n\016PlayerSyncData\022\014\n\004Name"
-      "\030\001 \001(\014\"C\n\017PlayerCreateReq\022\020\n\010PlayerID\030\001 "
-      "\001(\t\022\020\n\010Password\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\"Q\n\017P"
-      "layerCreateRsp\022\016\n\006Result\030\001 \001(\005\022\020\n\010Player"
-      "ID\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\022\016\n\006Reason\030\004 \001(\t*\205"
-      "\002\n\nCLIENT_CMD\022\026\n\022CLIENT_CMD_INVALID\020\000\022\026\n"
-      "\020CLIENT_CMD_BEGIN\020\260\352\001\022\021\n\013CLIENT_PING\020\261\352\001"
-      "\022\026\n\020CLIENT_LOGIN_REQ\020\264\352\001\022\027\n\021CLIENT_CREAT"
-      "E_REQ\020\265\352\001\022\031\n\023CLIENT_ANNOUNCE_REQ\020\266\352\001\022\032\n\024"
-      "CLIENT_JOIN_ROOM_REQ\020\267\352\001\022\032\n\024CLIENT_QUIT_"
-      "ROOM_REQ\020\270\352\001\022\032\n\024CLIENT_GAMESTART_REQ\020\271\352\001"
-      "\022\024\n\016CLIENT_CMD_END\020\350\201\002*\262\002\n\nSERVER_CMD\022\026\n"
-      "\022SERVER_CMD_INVALID\020\000\022\025\n\020SERVER_CMD_BEGI"
-      "N\020\350\007\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SERVER_LOGIN_R"
-      "SP\020\354\007\022\026\n\021SERVER_CREATE_RSP\020\355\007\022\030\n\023SERVER_"
-      "ANNOUNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN_RSP"
-      "\020\357\007\022\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SERVER_"
-      "BROADCAST_SEATTABLE\020\361\007\022\031\n\024SERVER_GAMESTA"
-      "RT_RSP\020\362\007\022\023\n\016GM_OPERATE_RSP\020\314\010\022\023\n\016SERVER"
-      "_CMD_END\020\220N*\224\006\n\021PROTO_RESULT_CODE\022\032\n\026SER"
-      "VER_LOGIN_RESULT_OK\020\000\022\034\n\030SERVER_LOGIN_RE"
-      "SULT_FAIL\020\001\0224\n\'SERVER_LOGIN_RESULT_FAIL_"
-      "NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377\377\001\022,\n(SERVER_LOGI"
-      "N_RESULT_FAIL_ALREADY_IN_GAME\020\003\022\"\n\036SERVE"
-      "R_LOGIN_RESULT_FAIL_WRONG\020\004\022\026\n\022JOINROOM_"
-      "RESULT_OK\020\005\022/\n+JOINROOM_RESULT_FAIL_EXIS"
-      "TING_PLAYER_INROOM\020\006\022%\n!JOINROOM_RESULT_"
-      "FAIL_NO_SUCH_ROOM\020\007\022%\n!JOINROOM_RESULT_F"
-      "AIL_BAD_PLAYERID\020\010\022-\n)JOINROOM_RESULT_FA"
-      "IL_PLAYER_AMOUNT_EXCEED\020\t\022(\n$JOINROOM_RE"
-      "SULT_FAIL_NO_ENOUGH_MONEY\020\n\022-\n)JOINROOM_"
-      "RESULT_FAIL_ROOM_ALREADY_IN_GAME\020\013\022\026\n\022QU"
-      "ITROOM_RESULT_OK\020\017\022\030\n\024QUITROOM_RESULT_FA"
-      "IL\020\020\022%\n!QUITROOM_RESULT_FAIL_NO_SUCH_ROO"
-      "M\020\021\022#\n\037QUITROOM_RESULT_FAIL_INVALID_ID\020\022"
-      "\022\020\n\014GAMESTART_OK\020\023\022\037\n\033GAMESTART_FAIL_NO_"
-      "SUCH_ROOM\020\024\022!\n\035GAMESTART_FAIL_NOT_ROOM_O"
-      "WNER\020\025\022!\n\035GAMESTART_FAIL_NO_ENOUGH_USER\020"
-      "\026\022\'\n#GAMESTART_FAIL_ROOM_ALREADY_IN_GAME"
-      "\020\027b\006proto3"
+      "tart\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"g"
+      "\n\017GameStartResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006R"
+      "oomID\030\002 \001(\005\022\027\n\017GameStartResult\030\003 \001(\005\022\031\n\004"
+      "hole\030\005 \003(\0132\013.Texus.Card\")\n\003Get\022\020\n\010Player"
+      "ID\030\001 \001(\t\022\020\n\010Password\030\002 \001(\t\"\036\n\016PlayerSync"
+      "Data\022\014\n\004Name\030\001 \001(\014\"C\n\017PlayerCreateReq\022\020\n"
+      "\010PlayerID\030\001 \001(\t\022\020\n\010Password\030\002 \001(\t\022\014\n\004Nam"
+      "e\030\003 \001(\014\"Q\n\017PlayerCreateRsp\022\016\n\006Result\030\001 \001"
+      "(\005\022\020\n\010PlayerID\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\022\016\n\006Re"
+      "ason\030\004 \001(\t*\205\002\n\nCLIENT_CMD\022\026\n\022CLIENT_CMD_"
+      "INVALID\020\000\022\026\n\020CLIENT_CMD_BEGIN\020\260\352\001\022\021\n\013CLI"
+      "ENT_PING\020\261\352\001\022\026\n\020CLIENT_LOGIN_REQ\020\264\352\001\022\027\n\021"
+      "CLIENT_CREATE_REQ\020\265\352\001\022\031\n\023CLIENT_ANNOUNCE"
+      "_REQ\020\266\352\001\022\032\n\024CLIENT_JOIN_ROOM_REQ\020\267\352\001\022\032\n\024"
+      "CLIENT_QUIT_ROOM_REQ\020\270\352\001\022\032\n\024CLIENT_GAMES"
+      "TART_REQ\020\271\352\001\022\024\n\016CLIENT_CMD_END\020\350\201\002*\262\002\n\nS"
+      "ERVER_CMD\022\026\n\022SERVER_CMD_INVALID\020\000\022\025\n\020SER"
+      "VER_CMD_BEGIN\020\350\007\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SE"
+      "RVER_LOGIN_RSP\020\354\007\022\026\n\021SERVER_CREATE_RSP\020\355"
+      "\007\022\030\n\023SERVER_ANNOUNCE_RSP\020\356\007\022\032\n\025SERVER_JU"
+      "DGE_JOIN_RSP\020\357\007\022\030\n\023SERVER_QUITROOM_RSP\020\360"
+      "\007\022\037\n\032SERVER_BROADCAST_SEATTABLE\020\361\007\022\031\n\024SE"
+      "RVER_GAMESTART_RSP\020\362\007\022\023\n\016GM_OPERATE_RSP\020"
+      "\314\010\022\023\n\016SERVER_CMD_END\020\220N*\224\006\n\021PROTO_RESULT"
+      "_CODE\022\032\n\026SERVER_LOGIN_RESULT_OK\020\000\022\034\n\030SER"
+      "VER_LOGIN_RESULT_FAIL\020\001\0224\n\'SERVER_LOGIN_"
+      "RESULT_FAIL_NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377\377\001\022,\n"
+      "(SERVER_LOGIN_RESULT_FAIL_ALREADY_IN_GAM"
+      "E\020\003\022\"\n\036SERVER_LOGIN_RESULT_FAIL_WRONG\020\004\022"
+      "\026\n\022JOINROOM_RESULT_OK\020\005\022/\n+JOINROOM_RESU"
+      "LT_FAIL_EXISTING_PLAYER_INROOM\020\006\022%\n!JOIN"
+      "ROOM_RESULT_FAIL_NO_SUCH_ROOM\020\007\022%\n!JOINR"
+      "OOM_RESULT_FAIL_BAD_PLAYERID\020\010\022-\n)JOINRO"
+      "OM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED\020\t\022(\n"
+      "$JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY\020\n\022"
+      "-\n)JOINROOM_RESULT_FAIL_ROOM_ALREADY_IN_"
+      "GAME\020\013\022\026\n\022QUITROOM_RESULT_OK\020\017\022\030\n\024QUITRO"
+      "OM_RESULT_FAIL\020\020\022%\n!QUITROOM_RESULT_FAIL"
+      "_NO_SUCH_ROOM\020\021\022#\n\037QUITROOM_RESULT_FAIL_"
+      "INVALID_ID\020\022\022\020\n\014GAMESTART_OK\020\023\022\037\n\033GAMEST"
+      "ART_FAIL_NO_SUCH_ROOM\020\024\022!\n\035GAMESTART_FAI"
+      "L_NOT_ROOM_OWNER\020\025\022!\n\035GAMESTART_FAIL_NO_"
+      "ENOUGH_USER\020\026\022\'\n#GAMESTART_FAIL_ROOM_ALR"
+      "EADY_IN_GAME\020\027b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2330);
+      descriptor, 2302);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "texus_room.proto", &protobuf_RegisterTypes);
 }
@@ -3044,7 +3042,6 @@ void GameStartResult::InitAsDefaultInstance() {
 const int GameStartResult::kPlayerIDFieldNumber;
 const int GameStartResult::kRoomIDFieldNumber;
 const int GameStartResult::kGameStartResultFieldNumber;
-const int GameStartResult::kFlopFieldNumber;
 const int GameStartResult::kHoleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -3058,7 +3055,6 @@ GameStartResult::GameStartResult()
 GameStartResult::GameStartResult(const GameStartResult& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      flop_(from.flop_),
       hole_(from.hole_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -3107,7 +3103,6 @@ void GameStartResult::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  flop_.Clear();
   hole_.Clear();
   playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&roomid_, 0, static_cast<size_t>(
@@ -3164,18 +3159,6 @@ bool GameStartResult::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &gamestartresult_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .Texus.Card flop = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flop()));
         } else {
           goto handle_unusual;
         }
@@ -3240,15 +3223,6 @@ void GameStartResult::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->gamestartresult(), output);
   }
 
-  // repeated .Texus.Card flop = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flop_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->flop(static_cast<int>(i)),
-      output);
-  }
-
   // repeated .Texus.Card hole = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hole_size()); i < n; i++) {
@@ -3293,14 +3267,6 @@ void GameStartResult::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->gamestartresult(), target);
   }
 
-  // repeated .Texus.Card flop = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flop_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->flop(static_cast<int>(i)), deterministic, target);
-  }
-
   // repeated .Texus.Card hole = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hole_size()); i < n; i++) {
@@ -3326,17 +3292,6 @@ size_t GameStartResult::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .Texus.Card flop = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flop_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flop(static_cast<int>(i)));
-    }
-  }
-
   // repeated .Texus.Card hole = 5;
   {
     unsigned int count = static_cast<unsigned int>(this->hole_size());
@@ -3396,7 +3351,6 @@ void GameStartResult::MergeFrom(const GameStartResult& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  flop_.MergeFrom(from.flop_);
   hole_.MergeFrom(from.hole_);
   if (from.playerid().size() > 0) {
 
@@ -3434,7 +3388,6 @@ void GameStartResult::Swap(GameStartResult* other) {
 }
 void GameStartResult::InternalSwap(GameStartResult* other) {
   using std::swap;
-  CastToBase(&flop_)->InternalSwap(CastToBase(&other->flop_));
   CastToBase(&hole_)->InternalSwap(CastToBase(&other->hole_));
   playerid_.Swap(&other->playerid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());

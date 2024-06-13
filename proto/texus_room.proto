@@ -119,7 +119,7 @@ message GameStartResult{
 	string PlayerID=1;
 	int32 RoomID =2;
 	int32 GameStartResult=3;
-	repeated Card flop=4;
+	//repeated Card flop=4;
 	repeated Card hole=5;
 }
 

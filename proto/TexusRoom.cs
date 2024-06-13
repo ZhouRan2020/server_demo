@@ -37,45 +37,45 @@ namespace Texus {
             "CzIULlRleHVzLlNlYXRUYWJsZUl0ZW0SDQoFbW9uZXkYBSABKAUiPQoSQnJv",
             "YWRjYXN0U2VhdFRhYmxlEicKCVNlYXRUYWJsZRgBIAMoCzIULlRleHVzLlNl",
             "YXRUYWJsZUl0ZW0iLQoJR2FtZVN0YXJ0EhAKCFBsYXllcklEGAEgASgJEg4K",
-            "BlJvb21JRBgCIAEoBSKCAQoPR2FtZVN0YXJ0UmVzdWx0EhAKCFBsYXllcklE",
-            "GAEgASgJEg4KBlJvb21JRBgCIAEoBRIXCg9HYW1lU3RhcnRSZXN1bHQYAyAB",
-            "KAUSGQoEZmxvcBgEIAMoCzILLlRleHVzLkNhcmQSGQoEaG9sZRgFIAMoCzIL",
-            "LlRleHVzLkNhcmQiKQoDR2V0EhAKCFBsYXllcklEGAEgASgJEhAKCFBhc3N3",
-            "b3JkGAIgASgJIh4KDlBsYXllclN5bmNEYXRhEgwKBE5hbWUYASABKAwiQwoP",
-            "UGxheWVyQ3JlYXRlUmVxEhAKCFBsYXllcklEGAEgASgJEhAKCFBhc3N3b3Jk",
-            "GAIgASgJEgwKBE5hbWUYAyABKAwiUQoPUGxheWVyQ3JlYXRlUnNwEg4KBlJl",
-            "c3VsdBgBIAEoBRIQCghQbGF5ZXJJRBgCIAEoCRIMCgROYW1lGAMgASgMEg4K",
-            "BlJlYXNvbhgEIAEoCSqFAgoKQ0xJRU5UX0NNRBIWChJDTElFTlRfQ01EX0lO",
-            "VkFMSUQQABIWChBDTElFTlRfQ01EX0JFR0lOELDqARIRCgtDTElFTlRfUElO",
-            "RxCx6gESFgoQQ0xJRU5UX0xPR0lOX1JFURC06gESFwoRQ0xJRU5UX0NSRUFU",
-            "RV9SRVEQteoBEhkKE0NMSUVOVF9BTk5PVU5DRV9SRVEQtuoBEhoKFENMSUVO",
-            "VF9KT0lOX1JPT01fUkVRELfqARIaChRDTElFTlRfUVVJVF9ST09NX1JFURC4",
-            "6gESGgoUQ0xJRU5UX0dBTUVTVEFSVF9SRVEQueoBEhQKDkNMSUVOVF9DTURf",
-            "RU5EEOiBAiqyAgoKU0VSVkVSX0NNRBIWChJTRVJWRVJfQ01EX0lOVkFMSUQQ",
-            "ABIVChBTRVJWRVJfQ01EX0JFR0lOEOgHEhAKC1NFUlZFUl9QT05HEOkHEhUK",
-            "EFNFUlZFUl9MT0dJTl9SU1AQ7AcSFgoRU0VSVkVSX0NSRUFURV9SU1AQ7QcS",
-            "GAoTU0VSVkVSX0FOTk9VTkNFX1JTUBDuBxIaChVTRVJWRVJfSlVER0VfSk9J",
-            "Tl9SU1AQ7wcSGAoTU0VSVkVSX1FVSVRST09NX1JTUBDwBxIfChpTRVJWRVJf",
-            "QlJPQURDQVNUX1NFQVRUQUJMRRDxBxIZChRTRVJWRVJfR0FNRVNUQVJUX1JT",
-            "UBDyBxITCg5HTV9PUEVSQVRFX1JTUBDMCBITCg5TRVJWRVJfQ01EX0VORBCQ",
-            "TiqUBgoRUFJPVE9fUkVTVUxUX0NPREUSGgoWU0VSVkVSX0xPR0lOX1JFU1VM",
-            "VF9PSxAAEhwKGFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTBABEjQKJ1NFUlZF",
-            "Ul9MT0dJTl9SRVNVTFRfRkFJTF9OT19TVUNIX1BMQVlFUhD+//////////8B",
-            "EiwKKFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9BTFJFQURZX0lOX0dBTUUQ",
-            "AxIiCh5TRVJWRVJfTE9HSU5fUkVTVUxUX0ZBSUxfV1JPTkcQBBIWChJKT0lO",
-            "Uk9PTV9SRVNVTFRfT0sQBRIvCitKT0lOUk9PTV9SRVNVTFRfRkFJTF9FWElT",
-            "VElOR19QTEFZRVJfSU5ST09NEAYSJQohSk9JTlJPT01fUkVTVUxUX0ZBSUxf",
-            "Tk9fU1VDSF9ST09NEAcSJQohSk9JTlJPT01fUkVTVUxUX0ZBSUxfQkFEX1BM",
-            "QVlFUklEEAgSLQopSk9JTlJPT01fUkVTVUxUX0ZBSUxfUExBWUVSX0FNT1VO",
-            "VF9FWENFRUQQCRIoCiRKT0lOUk9PTV9SRVNVTFRfRkFJTF9OT19FTk9VR0hf",
-            "TU9ORVkQChItCilKT0lOUk9PTV9SRVNVTFRfRkFJTF9ST09NX0FMUkVBRFlf",
-            "SU5fR0FNRRALEhYKElFVSVRST09NX1JFU1VMVF9PSxAPEhgKFFFVSVRST09N",
-            "X1JFU1VMVF9GQUlMEBASJQohUVVJVFJPT01fUkVTVUxUX0ZBSUxfTk9fU1VD",
-            "SF9ST09NEBESIwofUVVJVFJPT01fUkVTVUxUX0ZBSUxfSU5WQUxJRF9JRBAS",
-            "EhAKDEdBTUVTVEFSVF9PSxATEh8KG0dBTUVTVEFSVF9GQUlMX05PX1NVQ0hf",
-            "Uk9PTRAUEiEKHUdBTUVTVEFSVF9GQUlMX05PVF9ST09NX09XTkVSEBUSIQod",
-            "R0FNRVNUQVJUX0ZBSUxfTk9fRU5PVUdIX1VTRVIQFhInCiNHQU1FU1RBUlRf",
-            "RkFJTF9ST09NX0FMUkVBRFlfSU5fR0FNRRAXYgZwcm90bzM="));
+            "BlJvb21JRBgCIAEoBSJnCg9HYW1lU3RhcnRSZXN1bHQSEAoIUGxheWVySUQY",
+            "ASABKAkSDgoGUm9vbUlEGAIgASgFEhcKD0dhbWVTdGFydFJlc3VsdBgDIAEo",
+            "BRIZCgRob2xlGAUgAygLMgsuVGV4dXMuQ2FyZCIpCgNHZXQSEAoIUGxheWVy",
+            "SUQYASABKAkSEAoIUGFzc3dvcmQYAiABKAkiHgoOUGxheWVyU3luY0RhdGES",
+            "DAoETmFtZRgBIAEoDCJDCg9QbGF5ZXJDcmVhdGVSZXESEAoIUGxheWVySUQY",
+            "ASABKAkSEAoIUGFzc3dvcmQYAiABKAkSDAoETmFtZRgDIAEoDCJRCg9QbGF5",
+            "ZXJDcmVhdGVSc3ASDgoGUmVzdWx0GAEgASgFEhAKCFBsYXllcklEGAIgASgJ",
+            "EgwKBE5hbWUYAyABKAwSDgoGUmVhc29uGAQgASgJKoUCCgpDTElFTlRfQ01E",
+            "EhYKEkNMSUVOVF9DTURfSU5WQUxJRBAAEhYKEENMSUVOVF9DTURfQkVHSU4Q",
+            "sOoBEhEKC0NMSUVOVF9QSU5HELHqARIWChBDTElFTlRfTE9HSU5fUkVRELTq",
+            "ARIXChFDTElFTlRfQ1JFQVRFX1JFURC16gESGQoTQ0xJRU5UX0FOTk9VTkNF",
+            "X1JFURC26gESGgoUQ0xJRU5UX0pPSU5fUk9PTV9SRVEQt+oBEhoKFENMSUVO",
+            "VF9RVUlUX1JPT01fUkVRELjqARIaChRDTElFTlRfR0FNRVNUQVJUX1JFURC5",
+            "6gESFAoOQ0xJRU5UX0NNRF9FTkQQ6IECKrICCgpTRVJWRVJfQ01EEhYKElNF",
+            "UlZFUl9DTURfSU5WQUxJRBAAEhUKEFNFUlZFUl9DTURfQkVHSU4Q6AcSEAoL",
+            "U0VSVkVSX1BPTkcQ6QcSFQoQU0VSVkVSX0xPR0lOX1JTUBDsBxIWChFTRVJW",
+            "RVJfQ1JFQVRFX1JTUBDtBxIYChNTRVJWRVJfQU5OT1VOQ0VfUlNQEO4HEhoK",
+            "FVNFUlZFUl9KVURHRV9KT0lOX1JTUBDvBxIYChNTRVJWRVJfUVVJVFJPT01f",
+            "UlNQEPAHEh8KGlNFUlZFUl9CUk9BRENBU1RfU0VBVFRBQkxFEPEHEhkKFFNF",
+            "UlZFUl9HQU1FU1RBUlRfUlNQEPIHEhMKDkdNX09QRVJBVEVfUlNQEMwIEhMK",
+            "DlNFUlZFUl9DTURfRU5EEJBOKpQGChFQUk9UT19SRVNVTFRfQ09ERRIaChZT",
+            "RVJWRVJfTE9HSU5fUkVTVUxUX09LEAASHAoYU0VSVkVSX0xPR0lOX1JFU1VM",
+            "VF9GQUlMEAESNAonU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlMX05PX1NVQ0hf",
+            "UExBWUVSEP7//////////wESLAooU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlM",
+            "X0FMUkVBRFlfSU5fR0FNRRADEiIKHlNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJ",
+            "TF9XUk9ORxAEEhYKEkpPSU5ST09NX1JFU1VMVF9PSxAFEi8KK0pPSU5ST09N",
+            "X1JFU1VMVF9GQUlMX0VYSVNUSU5HX1BMQVlFUl9JTlJPT00QBhIlCiFKT0lO",
+            "Uk9PTV9SRVNVTFRfRkFJTF9OT19TVUNIX1JPT00QBxIlCiFKT0lOUk9PTV9S",
+            "RVNVTFRfRkFJTF9CQURfUExBWUVSSUQQCBItCilKT0lOUk9PTV9SRVNVTFRf",
+            "RkFJTF9QTEFZRVJfQU1PVU5UX0VYQ0VFRBAJEigKJEpPSU5ST09NX1JFU1VM",
+            "VF9GQUlMX05PX0VOT1VHSF9NT05FWRAKEi0KKUpPSU5ST09NX1JFU1VMVF9G",
+            "QUlMX1JPT01fQUxSRUFEWV9JTl9HQU1FEAsSFgoSUVVJVFJPT01fUkVTVUxU",
+            "X09LEA8SGAoUUVVJVFJPT01fUkVTVUxUX0ZBSUwQEBIlCiFRVUlUUk9PTV9S",
+            "RVNVTFRfRkFJTF9OT19TVUNIX1JPT00QERIjCh9RVUlUUk9PTV9SRVNVTFRf",
+            "RkFJTF9JTlZBTElEX0lEEBISEAoMR0FNRVNUQVJUX09LEBMSHwobR0FNRVNU",
+            "QVJUX0ZBSUxfTk9fU1VDSF9ST09NEBQSIQodR0FNRVNUQVJUX0ZBSUxfTk9U",
+            "X1JPT01fT1dORVIQFRIhCh1HQU1FU1RBUlRfRkFJTF9OT19FTk9VR0hfVVNF",
+            "UhAWEicKI0dBTUVTVEFSVF9GQUlMX1JPT01fQUxSRUFEWV9JTl9HQU1FEBdi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Texus.CLIENT_CMD), typeof(global::Texus.SERVER_CMD), typeof(global::Texus.PROTO_RESULT_CODE), }, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Texus {
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerQuitRoomResult), global::Texus.PlayerQuitRoomResult.Parser, new[]{ "PlayerID", "RoomID", "QuitResult", "SeatTable", "Money" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.BroadcastSeatTable), global::Texus.BroadcastSeatTable.Parser, new[]{ "SeatTable" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.GameStart), global::Texus.GameStart.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.GameStartResult), global::Texus.GameStartResult.Parser, new[]{ "PlayerID", "RoomID", "GameStartResult_", "Flop", "Hole" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.GameStartResult), global::Texus.GameStartResult.Parser, new[]{ "PlayerID", "RoomID", "GameStartResult_", "Hole" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.Get), global::Texus.Get.Parser, new[]{ "PlayerID", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerSyncData), global::Texus.PlayerSyncData.Parser, new[]{ "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerCreateReq), global::Texus.PlayerCreateReq.Parser, new[]{ "PlayerID", "Password", "Name" }, null, null, null),
@@ -1571,7 +1571,6 @@ namespace Texus {
       playerID_ = other.playerID_;
       roomID_ = other.roomID_;
       gameStartResult_ = other.gameStartResult_;
-      flop_ = other.flop_.Clone();
       hole_ = other.hole_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1614,21 +1613,14 @@ namespace Texus {
       }
     }
 
-    /// <summary>Field number for the "flop" field.</summary>
-    public const int FlopFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Texus.Card> _repeated_flop_codec
-        = pb::FieldCodec.ForMessage(34, global::Texus.Card.Parser);
-    private readonly pbc::RepeatedField<global::Texus.Card> flop_ = new pbc::RepeatedField<global::Texus.Card>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Texus.Card> Flop {
-      get { return flop_; }
-    }
-
     /// <summary>Field number for the "hole" field.</summary>
     public const int HoleFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Texus.Card> _repeated_hole_codec
         = pb::FieldCodec.ForMessage(42, global::Texus.Card.Parser);
     private readonly pbc::RepeatedField<global::Texus.Card> hole_ = new pbc::RepeatedField<global::Texus.Card>();
+    /// <summary>
+    ///repeated Card flop=4;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Texus.Card> Hole {
       get { return hole_; }
@@ -1650,7 +1642,6 @@ namespace Texus {
       if (PlayerID != other.PlayerID) return false;
       if (RoomID != other.RoomID) return false;
       if (GameStartResult_ != other.GameStartResult_) return false;
-      if(!flop_.Equals(other.flop_)) return false;
       if(!hole_.Equals(other.hole_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1661,7 +1652,6 @@ namespace Texus {
       if (PlayerID.Length != 0) hash ^= PlayerID.GetHashCode();
       if (RoomID != 0) hash ^= RoomID.GetHashCode();
       if (GameStartResult_ != 0) hash ^= GameStartResult_.GetHashCode();
-      hash ^= flop_.GetHashCode();
       hash ^= hole_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1688,7 +1678,6 @@ namespace Texus {
         output.WriteRawTag(24);
         output.WriteInt32(GameStartResult_);
       }
-      flop_.WriteTo(output, _repeated_flop_codec);
       hole_.WriteTo(output, _repeated_hole_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1707,7 +1696,6 @@ namespace Texus {
       if (GameStartResult_ != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(GameStartResult_);
       }
-      size += flop_.CalculateSize(_repeated_flop_codec);
       size += hole_.CalculateSize(_repeated_hole_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1729,7 +1717,6 @@ namespace Texus {
       if (other.GameStartResult_ != 0) {
         GameStartResult_ = other.GameStartResult_;
       }
-      flop_.Add(other.flop_);
       hole_.Add(other.hole_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1752,10 +1739,6 @@ namespace Texus {
           }
           case 24: {
             GameStartResult_ = input.ReadInt32();
-            break;
-          }
-          case 34: {
-            flop_.AddEntriesFrom(input, _repeated_flop_codec);
             break;
           }
           case 42: {

@@ -1276,18 +1276,6 @@ class GameStartResult : public ::google::protobuf::Message /* @@protoc_insertion
 
   // accessors -------------------------------------------------------
 
-  // repeated .Texus.Card flop = 4;
-  int flop_size() const;
-  void clear_flop();
-  static const int kFlopFieldNumber = 4;
-  ::Texus::Card* mutable_flop(int index);
-  ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
-      mutable_flop();
-  const ::Texus::Card& flop(int index) const;
-  ::Texus::Card* add_flop();
-  const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
-      flop() const;
-
   // repeated .Texus.Card hole = 5;
   int hole_size() const;
   void clear_hole();
@@ -1330,7 +1318,6 @@ class GameStartResult : public ::google::protobuf::Message /* @@protoc_insertion
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::Texus::Card > flop_;
   ::google::protobuf::RepeatedPtrField< ::Texus::Card > hole_;
   ::google::protobuf::internal::ArenaStringPtr playerid_;
   ::google::protobuf::int32 roomid_;
@@ -2562,36 +2549,6 @@ inline void GameStartResult::set_gamestartresult(::google::protobuf::int32 value
   
   gamestartresult_ = value;
   // @@protoc_insertion_point(field_set:Texus.GameStartResult.GameStartResult)
-}
-
-// repeated .Texus.Card flop = 4;
-inline int GameStartResult::flop_size() const {
-  return flop_.size();
-}
-inline void GameStartResult::clear_flop() {
-  flop_.Clear();
-}
-inline ::Texus::Card* GameStartResult::mutable_flop(int index) {
-  // @@protoc_insertion_point(field_mutable:Texus.GameStartResult.flop)
-  return flop_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
-GameStartResult::mutable_flop() {
-  // @@protoc_insertion_point(field_mutable_list:Texus.GameStartResult.flop)
-  return &flop_;
-}
-inline const ::Texus::Card& GameStartResult::flop(int index) const {
-  // @@protoc_insertion_point(field_get:Texus.GameStartResult.flop)
-  return flop_.Get(index);
-}
-inline ::Texus::Card* GameStartResult::add_flop() {
-  // @@protoc_insertion_point(field_add:Texus.GameStartResult.flop)
-  return flop_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
-GameStartResult::flop() const {
-  // @@protoc_insertion_point(field_list:Texus.GameStartResult.flop)
-  return flop_;
 }
 
 // repeated .Texus.Card hole = 5;

@@ -74,6 +74,14 @@ struct Room {
 			user.hole[1] = deck.back();
 			deck.pop_back();
 		}
+
+		turn = deck.back();
+		deck.pop_back();
+
+		river = deck.back();
+		deck.pop_back();
+
+		cerr << "all card given, " << " remaining deck size is " << deck.size() << '\n';
 	}
 };
 

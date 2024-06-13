@@ -219,7 +219,7 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		tryjoin.ParseFromArray(pack->data, pack->len);
 		cerr << "JOIN REQ: playerid: " << tryjoin.playerid() << " roomid: " << tryjoin.roomid() << '\n';
 
-		User user_join{ client, tryjoin.playerid() ,0 };
+		User user_join{ client, tryjoin.playerid()};
 		if (g_id.find(user_join.id) == g_id.end()) {
 			g_id[user_join.id] = INIT_MONEY;
 		}
@@ -281,7 +281,7 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		tryquit.ParseFromArray(pack->data, pack->len);
 		cerr << "QUIT REQ: playerid: " << tryquit.playerid() << " roomid: " << tryquit.roomid() << '\n';
 
-		User user_quit{ client, tryquit.playerid(), 0 };
+		User user_quit{ client, tryquit.playerid()};
 		auto room = tryquit.roomid();
 
 		Texus::PlayerQuitRoomResult quitresult;
@@ -373,11 +373,12 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 					newhole->set_suit(user.hole[i].s);
 					newhole->set_rank(user.hole[i].r);
 				}
-				for (int i = 0; i < 3; ++i) {
+			/*	for (int i = 0; i < 3; ++i) {
 					auto newflop = gsrsp.add_flop();
 					newflop->set_suit(g_rooms[room].flop[i].s);
 					newflop->set_rank(g_rooms[room].flop[i].r);
 				}
+			*/
 				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
 			}
 		}
