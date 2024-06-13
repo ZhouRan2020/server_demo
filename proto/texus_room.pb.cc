@@ -251,6 +251,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerJoinResult, roomid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerJoinResult, joinresult_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerJoinResult, seattable_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerJoinResult, money_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerTryQuitRoom, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -267,6 +268,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, roomid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, quitresult_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, seattable_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, money_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -314,14 +316,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::Texus::PlayerTryJoin)},
   { 7, -1, sizeof(::Texus::PlayerJoinResult)},
-  { 16, -1, sizeof(::Texus::PlayerTryQuitRoom)},
-  { 23, -1, sizeof(::Texus::PlayerQuitRoomResult)},
-  { 32, -1, sizeof(::Texus::SeatTableItem)},
-  { 39, -1, sizeof(::Texus::BroadcastSeatTable)},
-  { 45, -1, sizeof(::Texus::Get)},
-  { 52, -1, sizeof(::Texus::PlayerSyncData)},
-  { 58, -1, sizeof(::Texus::PlayerCreateReq)},
-  { 66, -1, sizeof(::Texus::PlayerCreateRsp)},
+  { 17, -1, sizeof(::Texus::PlayerTryQuitRoom)},
+  { 24, -1, sizeof(::Texus::PlayerQuitRoomResult)},
+  { 34, -1, sizeof(::Texus::SeatTableItem)},
+  { 41, -1, sizeof(::Texus::BroadcastSeatTable)},
+  { 47, -1, sizeof(::Texus::Get)},
+  { 54, -1, sizeof(::Texus::PlayerSyncData)},
+  { 60, -1, sizeof(::Texus::PlayerCreateReq)},
+  { 68, -1, sizeof(::Texus::PlayerCreateRsp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -359,53 +361,55 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\020texus_room.proto\022\005Texus\"1\n\rPlayerTryJo"
-      "in\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"q\n\020"
-      "PlayerJoinResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006Ro"
-      "omID\030\002 \001(\005\022\022\n\nJoinResult\030\003 \001(\005\022\'\n\tSeatTa"
-      "ble\030\004 \003(\0132\024.Texus.SeatTableItem\"5\n\021Playe"
-      "rTryQuitRoom\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID"
-      "\030\002 \001(\005\"u\n\024PlayerQuitRoomResult\022\020\n\010Player"
-      "ID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\022\022\n\nQuitResult\030\003"
-      " \001(\005\022\'\n\tSeatTable\030\004 \003(\0132\024.Texus.SeatTabl"
-      "eItem\"5\n\rSeatTableItem\022\020\n\010PlayerId\030\001 \001(\t"
-      "\022\022\n\nSeatNumber\030\002 \001(\005\"=\n\022BroadcastSeatTab"
-      "le\022\'\n\tSeatTable\030\001 \003(\0132\024.Texus.SeatTableI"
-      "tem\")\n\003Get\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010Password"
-      "\030\002 \001(\t\"\036\n\016PlayerSyncData\022\014\n\004Name\030\001 \001(\014\"C"
-      "\n\017PlayerCreateReq\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010P"
-      "assword\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\"Q\n\017PlayerCre"
-      "ateRsp\022\016\n\006Result\030\001 \001(\005\022\020\n\010PlayerID\030\002 \001(\t"
-      "\022\014\n\004Name\030\003 \001(\014\022\016\n\006Reason\030\004 \001(\t*\351\001\n\nCLIEN"
-      "T_CMD\022\026\n\022CLIENT_CMD_INVALID\020\000\022\026\n\020CLIENT_"
-      "CMD_BEGIN\020\260\352\001\022\021\n\013CLIENT_PING\020\261\352\001\022\026\n\020CLIE"
-      "NT_LOGIN_REQ\020\264\352\001\022\027\n\021CLIENT_CREATE_REQ\020\265\352"
-      "\001\022\031\n\023CLIENT_ANNOUNCE_REQ\020\266\352\001\022\032\n\024CLIENT_J"
-      "OIN_ROOM_REQ\020\267\352\001\022\032\n\024CLIENT_QUIT_ROOM_REQ"
-      "\020\270\352\001\022\024\n\016CLIENT_CMD_END\020\350\201\002*\227\002\n\nSERVER_CM"
-      "D\022\026\n\022SERVER_CMD_INVALID\020\000\022\025\n\020SERVER_CMD_"
-      "BEGIN\020\350\007\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SERVER_LOG"
-      "IN_RSP\020\354\007\022\026\n\021SERVER_CREATE_RSP\020\355\007\022\030\n\023SER"
-      "VER_ANNOUNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN"
-      "_RSP\020\357\007\022\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SER"
-      "VER_BROADCAST_SEATTABLE\020\361\007\022\023\n\016GM_OPERATE"
-      "_RSP\020\314\010\022\023\n\016SERVER_CMD_END\020\220N*\231\004\n\021PROTO_R"
-      "ESULT_CODE\022\032\n\026SERVER_LOGIN_RESULT_OK\020\000\022\034"
-      "\n\030SERVER_LOGIN_RESULT_FAIL\020\001\0224\n\'SERVER_L"
-      "OGIN_RESULT_FAIL_NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377"
-      "\377\001\022,\n(SERVER_LOGIN_RESULT_FAIL_ALREADY_I"
-      "N_GAME\020\003\022\"\n\036SERVER_LOGIN_RESULT_FAIL_WRO"
-      "NG\020\004\022\026\n\022JOINROOM_RESULT_OK\020\005\022/\n+JOINROOM"
-      "_RESULT_FAIL_EXISTING_PLAYER_INROOM\020\006\022%\n"
-      "!JOINROOM_RESULT_FAIL_NO_SUCH_ROOM\020\007\022%\n!"
-      "JOINROOM_RESULT_FAIL_BAD_PLAYERID\020\010\022-\n)J"
-      "OINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED"
-      "\020\t\022\026\n\022QUITROOM_RESULT_OK\020\017\022\030\n\024QUITROOM_R"
-      "ESULT_FAIL\020\020\022%\n!QUITROOM_RESULT_FAIL_NO_"
-      "SUCH_ROOM\020\021\022#\n\037QUITROOM_RESULT_FAIL_INVA"
-      "LID_ID\020\022b\006proto3"
+      "in\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\200\001\n"
+      "\020PlayerJoinResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006R"
+      "oomID\030\002 \001(\005\022\022\n\nJoinResult\030\003 \001(\005\022\'\n\tSeatT"
+      "able\030\004 \003(\0132\024.Texus.SeatTableItem\022\r\n\005mone"
+      "y\030\005 \001(\005\"5\n\021PlayerTryQuitRoom\022\020\n\010PlayerID"
+      "\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\204\001\n\024PlayerQuitRoo"
+      "mResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001("
+      "\005\022\022\n\nQuitResult\030\003 \001(\005\022\'\n\tSeatTable\030\004 \003(\013"
+      "2\024.Texus.SeatTableItem\022\r\n\005money\030\005 \001(\005\"5\n"
+      "\rSeatTableItem\022\020\n\010PlayerId\030\001 \001(\t\022\022\n\nSeat"
+      "Number\030\002 \001(\005\"=\n\022BroadcastSeatTable\022\'\n\tSe"
+      "atTable\030\001 \003(\0132\024.Texus.SeatTableItem\")\n\003G"
+      "et\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010Password\030\002 \001(\t\"\036"
+      "\n\016PlayerSyncData\022\014\n\004Name\030\001 \001(\014\"C\n\017Player"
+      "CreateReq\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010Password\030"
+      "\002 \001(\t\022\014\n\004Name\030\003 \001(\014\"Q\n\017PlayerCreateRsp\022\016"
+      "\n\006Result\030\001 \001(\005\022\020\n\010PlayerID\030\002 \001(\t\022\014\n\004Name"
+      "\030\003 \001(\014\022\016\n\006Reason\030\004 \001(\t*\351\001\n\nCLIENT_CMD\022\026\n"
+      "\022CLIENT_CMD_INVALID\020\000\022\026\n\020CLIENT_CMD_BEGI"
+      "N\020\260\352\001\022\021\n\013CLIENT_PING\020\261\352\001\022\026\n\020CLIENT_LOGIN"
+      "_REQ\020\264\352\001\022\027\n\021CLIENT_CREATE_REQ\020\265\352\001\022\031\n\023CLI"
+      "ENT_ANNOUNCE_REQ\020\266\352\001\022\032\n\024CLIENT_JOIN_ROOM"
+      "_REQ\020\267\352\001\022\032\n\024CLIENT_QUIT_ROOM_REQ\020\270\352\001\022\024\n\016"
+      "CLIENT_CMD_END\020\350\201\002*\227\002\n\nSERVER_CMD\022\026\n\022SER"
+      "VER_CMD_INVALID\020\000\022\025\n\020SERVER_CMD_BEGIN\020\350\007"
+      "\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SERVER_LOGIN_RSP\020\354"
+      "\007\022\026\n\021SERVER_CREATE_RSP\020\355\007\022\030\n\023SERVER_ANNO"
+      "UNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN_RSP\020\357\007\022"
+      "\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SERVER_BROA"
+      "DCAST_SEATTABLE\020\361\007\022\023\n\016GM_OPERATE_RSP\020\314\010\022"
+      "\023\n\016SERVER_CMD_END\020\220N*\303\004\n\021PROTO_RESULT_CO"
+      "DE\022\032\n\026SERVER_LOGIN_RESULT_OK\020\000\022\034\n\030SERVER"
+      "_LOGIN_RESULT_FAIL\020\001\0224\n\'SERVER_LOGIN_RES"
+      "ULT_FAIL_NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377\377\001\022,\n(SE"
+      "RVER_LOGIN_RESULT_FAIL_ALREADY_IN_GAME\020\003"
+      "\022\"\n\036SERVER_LOGIN_RESULT_FAIL_WRONG\020\004\022\026\n\022"
+      "JOINROOM_RESULT_OK\020\005\022/\n+JOINROOM_RESULT_"
+      "FAIL_EXISTING_PLAYER_INROOM\020\006\022%\n!JOINROO"
+      "M_RESULT_FAIL_NO_SUCH_ROOM\020\007\022%\n!JOINROOM"
+      "_RESULT_FAIL_BAD_PLAYERID\020\010\022-\n)JOINROOM_"
+      "RESULT_FAIL_PLAYER_AMOUNT_EXCEED\020\t\022(\n$JO"
+      "INROOM_RESULT_FAIL_NO_ENOUGH_MONEY\020\n\022\026\n\022"
+      "QUITROOM_RESULT_OK\020\017\022\030\n\024QUITROOM_RESULT_"
+      "FAIL\020\020\022%\n!QUITROOM_RESULT_FAIL_NO_SUCH_R"
+      "OOM\020\021\022#\n\037QUITROOM_RESULT_FAIL_INVALID_ID"
+      "\020\022b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1776);
+      descriptor, 1850);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "texus_room.proto", &protobuf_RegisterTypes);
 }
@@ -482,6 +486,7 @@ bool PROTO_RESULT_CODE_IsValid(int value) {
     case 7:
     case 8:
     case 9:
+    case 10:
     case 15:
     case 16:
     case 17:
@@ -783,6 +788,7 @@ const int PlayerJoinResult::kPlayerIDFieldNumber;
 const int PlayerJoinResult::kRoomIDFieldNumber;
 const int PlayerJoinResult::kJoinResultFieldNumber;
 const int PlayerJoinResult::kSeatTableFieldNumber;
+const int PlayerJoinResult::kMoneyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PlayerJoinResult::PlayerJoinResult()
@@ -802,16 +808,16 @@ PlayerJoinResult::PlayerJoinResult(const PlayerJoinResult& from)
     playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
   }
   ::memcpy(&roomid_, &from.roomid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&joinresult_) -
-    reinterpret_cast<char*>(&roomid_)) + sizeof(joinresult_));
+    static_cast<size_t>(reinterpret_cast<char*>(&money_) -
+    reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
   // @@protoc_insertion_point(copy_constructor:Texus.PlayerJoinResult)
 }
 
 void PlayerJoinResult::SharedCtor() {
   playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&roomid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&joinresult_) -
-      reinterpret_cast<char*>(&roomid_)) + sizeof(joinresult_));
+      reinterpret_cast<char*>(&money_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
 }
 
 PlayerJoinResult::~PlayerJoinResult() {
@@ -846,8 +852,8 @@ void PlayerJoinResult::Clear() {
   seattable_.Clear();
   playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&roomid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&joinresult_) -
-      reinterpret_cast<char*>(&roomid_)) + sizeof(joinresult_));
+      reinterpret_cast<char*>(&money_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
   _internal_metadata_.Clear();
 }
 
@@ -917,6 +923,20 @@ bool PlayerJoinResult::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 money = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &money_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -972,6 +992,11 @@ void PlayerJoinResult::SerializeWithCachedSizes(
       output);
   }
 
+  // int32 money = 5;
+  if (this->money() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->money(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1013,6 +1038,11 @@ void PlayerJoinResult::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, this->seattable(static_cast<int>(i)), deterministic, target);
+  }
+
+  // int32 money = 5;
+  if (this->money() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->money(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1064,6 +1094,13 @@ size_t PlayerJoinResult::ByteSizeLong() const {
         this->joinresult());
   }
 
+  // int32 money = 5;
+  if (this->money() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->money());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1102,6 +1139,9 @@ void PlayerJoinResult::MergeFrom(const PlayerJoinResult& from) {
   if (from.joinresult() != 0) {
     set_joinresult(from.joinresult());
   }
+  if (from.money() != 0) {
+    set_money(from.money());
+  }
 }
 
 void PlayerJoinResult::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1133,6 +1173,7 @@ void PlayerJoinResult::InternalSwap(PlayerJoinResult* other) {
     GetArenaNoVirtual());
   swap(roomid_, other->roomid_);
   swap(joinresult_, other->joinresult_);
+  swap(money_, other->money_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -1432,6 +1473,7 @@ const int PlayerQuitRoomResult::kPlayerIDFieldNumber;
 const int PlayerQuitRoomResult::kRoomIDFieldNumber;
 const int PlayerQuitRoomResult::kQuitResultFieldNumber;
 const int PlayerQuitRoomResult::kSeatTableFieldNumber;
+const int PlayerQuitRoomResult::kMoneyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PlayerQuitRoomResult::PlayerQuitRoomResult()
@@ -1451,16 +1493,16 @@ PlayerQuitRoomResult::PlayerQuitRoomResult(const PlayerQuitRoomResult& from)
     playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
   }
   ::memcpy(&roomid_, &from.roomid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&quitresult_) -
-    reinterpret_cast<char*>(&roomid_)) + sizeof(quitresult_));
+    static_cast<size_t>(reinterpret_cast<char*>(&money_) -
+    reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
   // @@protoc_insertion_point(copy_constructor:Texus.PlayerQuitRoomResult)
 }
 
 void PlayerQuitRoomResult::SharedCtor() {
   playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&roomid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&quitresult_) -
-      reinterpret_cast<char*>(&roomid_)) + sizeof(quitresult_));
+      reinterpret_cast<char*>(&money_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
 }
 
 PlayerQuitRoomResult::~PlayerQuitRoomResult() {
@@ -1495,8 +1537,8 @@ void PlayerQuitRoomResult::Clear() {
   seattable_.Clear();
   playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&roomid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&quitresult_) -
-      reinterpret_cast<char*>(&roomid_)) + sizeof(quitresult_));
+      reinterpret_cast<char*>(&money_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(money_));
   _internal_metadata_.Clear();
 }
 
@@ -1566,6 +1608,20 @@ bool PlayerQuitRoomResult::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 money = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &money_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1621,6 +1677,11 @@ void PlayerQuitRoomResult::SerializeWithCachedSizes(
       output);
   }
 
+  // int32 money = 5;
+  if (this->money() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->money(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1662,6 +1723,11 @@ void PlayerQuitRoomResult::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, this->seattable(static_cast<int>(i)), deterministic, target);
+  }
+
+  // int32 money = 5;
+  if (this->money() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->money(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1713,6 +1779,13 @@ size_t PlayerQuitRoomResult::ByteSizeLong() const {
         this->quitresult());
   }
 
+  // int32 money = 5;
+  if (this->money() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->money());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1751,6 +1824,9 @@ void PlayerQuitRoomResult::MergeFrom(const PlayerQuitRoomResult& from) {
   if (from.quitresult() != 0) {
     set_quitresult(from.quitresult());
   }
+  if (from.money() != 0) {
+    set_money(from.money());
+  }
 }
 
 void PlayerQuitRoomResult::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1782,6 +1858,7 @@ void PlayerQuitRoomResult::InternalSwap(PlayerQuitRoomResult* other) {
     GetArenaNoVirtual());
   swap(roomid_, other->roomid_);
   swap(quitresult_, other->quitresult_);
+  swap(money_, other->money_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

@@ -10,7 +10,10 @@ static map<uv_tcp_t*, PeerData*> s_clientMap;
 static char s_send_buff[64 * 1024];
 
 extern PlayerMgr g_playerMgr;
+
 extern vector<Room> g_rooms;
+extern map<string, int> g_id;
+
 // 发送一个pb对象到客户端
 bool SendPBToClient(uv_tcp_t* client, uint16_t cmd, ::google::protobuf::Message* msg)
 {
@@ -54,7 +57,6 @@ bool OnCloseClient(uv_tcp_t* client)
 }
 
 // 收到网络层发过来的数据
-
 bool OnRecv(uv_tcp_t* client, const char* data, int len)
 {
 	bool result = false;
@@ -228,11 +230,16 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		tryjoin.ParseFromArray(pack->data, pack->len);
 		cerr << "JOIN REQ: playerid: " << tryjoin.playerid() << " roomid: " << tryjoin.roomid() << '\n';
 
-		User user_join{ client, tryjoin.playerid() };
+		User user_join{ client, tryjoin.playerid() ,0 };
+		if (g_id.find(user_join.id) == g_id.end()) {
+			g_id[user_join.id] = INIT_MONEY;
+		}
+		user_join.chip = g_id[user_join.id];
 		auto room = tryjoin.roomid();
 
 		Texus::PlayerJoinResult joinresult;
 		joinresult.set_playerid(user_join.id);
+		
 		joinresult.set_roomid(room);
 
 		if (room >= g_rooms.size()) {
@@ -243,9 +250,17 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_EXISTING_PLAYER_INROOM);
 			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
 		}
+		else if (user_join.chip < MONEY_BAR) {
+			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY);
+			joinresult.set_money(user_join.chip);
+			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
+		}
 		else {
-			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_OK);
+			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_OK);		
+			joinresult.set_money(user_join.chip);
+
 			g_rooms[room].users.push_back(user_join);
+
 			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
 				auto new_seattableitem = joinresult.add_seattable();
 				new_seattableitem->set_playerid(g_rooms[room].users[i].id);
@@ -272,7 +287,7 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		tryquit.ParseFromArray(pack->data, pack->len);
 		cerr << "QUIT REQ: playerid: " << tryquit.playerid() << " roomid: " << tryquit.roomid() << '\n';
 
-		User user_quit{ client,tryquit.playerid() };
+		User user_quit{ client, tryquit.playerid(), 0 };
 		auto room = tryquit.roomid();
 
 		Texus::PlayerQuitRoomResult quitresult;
@@ -294,7 +309,17 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		}
 		else {
 			quitresult.set_quitresult(Texus::PROTO_RESULT_CODE::QUITROOM_RESULT_OK);
-			g_rooms[room].users.erase(std::find_if(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x == user_quit; }));
+
+			auto user_in_room = std::find_if(g_rooms[room].users.begin(), g_rooms[room].users.end(), [&](auto x) {return x == user_quit; });
+			if (g_id.find(user_quit.id) == g_id.end()) {
+				cerr << "UNEXPECTED CLIENT_QUIT_ROOM_REQ: invalid id\n";
+			}
+			else {
+				g_id[user_quit.id] = user_in_room->chip;
+				quitresult.set_money(g_id[user_quit.id]);
+			}
+			g_rooms[room].users.erase(user_in_room);
+
 			for (int i = 0; i < g_rooms[room].users.size(); ++i) {
 				auto new_seattableitem = quitresult.add_seattable();
 				new_seattableitem->set_playerid(g_rooms[room].users[i].id);

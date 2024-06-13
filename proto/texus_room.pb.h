@@ -163,6 +163,7 @@ enum PROTO_RESULT_CODE {
   JOINROOM_RESULT_FAIL_NO_SUCH_ROOM = 7,
   JOINROOM_RESULT_FAIL_BAD_PLAYERID = 8,
   JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED = 9,
+  JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY = 10,
   QUITROOM_RESULT_OK = 15,
   QUITROOM_RESULT_FAIL = 16,
   QUITROOM_RESULT_FAIL_NO_SUCH_ROOM = 17,
@@ -430,6 +431,12 @@ class PlayerJoinResult : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::int32 joinresult() const;
   void set_joinresult(::google::protobuf::int32 value);
 
+  // int32 money = 5;
+  void clear_money();
+  static const int kMoneyFieldNumber = 5;
+  ::google::protobuf::int32 money() const;
+  void set_money(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:Texus.PlayerJoinResult)
  private:
 
@@ -438,6 +445,7 @@ class PlayerJoinResult : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::internal::ArenaStringPtr playerid_;
   ::google::protobuf::int32 roomid_;
   ::google::protobuf::int32 joinresult_;
+  ::google::protobuf::int32 money_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
 };
@@ -686,6 +694,12 @@ class PlayerQuitRoomResult : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::int32 quitresult() const;
   void set_quitresult(::google::protobuf::int32 value);
 
+  // int32 money = 5;
+  void clear_money();
+  static const int kMoneyFieldNumber = 5;
+  ::google::protobuf::int32 money() const;
+  void set_money(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:Texus.PlayerQuitRoomResult)
  private:
 
@@ -694,6 +708,7 @@ class PlayerQuitRoomResult : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::internal::ArenaStringPtr playerid_;
   ::google::protobuf::int32 roomid_;
   ::google::protobuf::int32 quitresult_;
+  ::google::protobuf::int32 money_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
 };
@@ -1643,6 +1658,20 @@ PlayerJoinResult::seattable() const {
   return seattable_;
 }
 
+// int32 money = 5;
+inline void PlayerJoinResult::clear_money() {
+  money_ = 0;
+}
+inline ::google::protobuf::int32 PlayerJoinResult::money() const {
+  // @@protoc_insertion_point(field_get:Texus.PlayerJoinResult.money)
+  return money_;
+}
+inline void PlayerJoinResult::set_money(::google::protobuf::int32 value) {
+  
+  money_ = value;
+  // @@protoc_insertion_point(field_set:Texus.PlayerJoinResult.money)
+}
+
 // -------------------------------------------------------------------
 
 // PlayerTryQuitRoom
@@ -1827,6 +1856,20 @@ inline const ::google::protobuf::RepeatedPtrField< ::Texus::SeatTableItem >&
 PlayerQuitRoomResult::seattable() const {
   // @@protoc_insertion_point(field_list:Texus.PlayerQuitRoomResult.SeatTable)
   return seattable_;
+}
+
+// int32 money = 5;
+inline void PlayerQuitRoomResult::clear_money() {
+  money_ = 0;
+}
+inline ::google::protobuf::int32 PlayerQuitRoomResult::money() const {
+  // @@protoc_insertion_point(field_get:Texus.PlayerQuitRoomResult.money)
+  return money_;
+}
+inline void PlayerQuitRoomResult::set_money(::google::protobuf::int32 value) {
+  
+  money_ = value;
+  // @@protoc_insertion_point(field_set:Texus.PlayerQuitRoomResult.money)
 }
 
 // -------------------------------------------------------------------

@@ -2,10 +2,10 @@ syntax = "proto3";
 package Texus;
 
 enum CLIENT_CMD {
-    CLIENT_CMD_INVALID = 0;
-    CLIENT_CMD_BEGIN = 30000;
+	CLIENT_CMD_INVALID = 0;
+	CLIENT_CMD_BEGIN = 30000;
 
-    CLIENT_PING = 30001;
+	CLIENT_PING = 30001;
 
 	CLIENT_LOGIN_REQ = 30004; 
 	CLIENT_CREATE_REQ = 30005; 
@@ -13,15 +13,15 @@ enum CLIENT_CMD {
 
 	CLIENT_JOIN_ROOM_REQ = 30007;//客户端请求加入特定房间的请求
 	CLIENT_QUIT_ROOM_REQ = 30008;//客户端请求退出房间的请求
-    
+	
 	CLIENT_CMD_END = 33000;
 }
 
 enum SERVER_CMD {
-    SERVER_CMD_INVALID = 0;
-    SERVER_CMD_BEGIN = 1000;
+	SERVER_CMD_INVALID = 0;
+	SERVER_CMD_BEGIN = 1000;
 
-    SERVER_PONG = 1001;
+	SERVER_PONG = 1001;
 
 	SERVER_LOGIN_RSP = 1004;
 	SERVER_CREATE_RSP = 1005;
@@ -34,7 +34,7 @@ enum SERVER_CMD {
 
 	GM_OPERATE_RSP = 1100;
 
-    SERVER_CMD_END = 10000;
+	SERVER_CMD_END = 10000;
 }
 
 enum PROTO_RESULT_CODE{
@@ -50,6 +50,7 @@ enum PROTO_RESULT_CODE{
 	JOINROOM_RESULT_FAIL_NO_SUCH_ROOM = 7;
 	JOINROOM_RESULT_FAIL_BAD_PLAYERID = 8;
 	JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED = 9;
+	JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY = 10;
 
 	QUITROOM_RESULT_OK = 15;
 	QUITROOM_RESULT_FAIL = 16;
@@ -67,7 +68,8 @@ message PlayerJoinResult {
 	string PlayerID = 1;
 	int32 RoomID = 2;
 	int32 JoinResult = 3;
-	repeated SeatTableItem SeatTable= 4;
+	repeated SeatTableItem SeatTable = 4;
+	int32 money = 5;
 }
 
 message PlayerTryQuitRoom {
@@ -80,6 +82,7 @@ message PlayerQuitRoomResult {
 	int32 RoomID = 2;
 	int32 QuitResult = 3;
 	repeated SeatTableItem SeatTable= 4;
+	int32 money = 5;
 }
 
 message SeatTableItem {

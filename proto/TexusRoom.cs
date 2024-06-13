@@ -25,52 +25,54 @@ namespace Texus {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChB0ZXh1c19yb29tLnByb3RvEgVUZXh1cyIxCg1QbGF5ZXJUcnlKb2luEhAK",
-            "CFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBSJxChBQbGF5ZXJKb2lu",
-            "UmVzdWx0EhAKCFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBRISCgpK",
-            "b2luUmVzdWx0GAMgASgFEicKCVNlYXRUYWJsZRgEIAMoCzIULlRleHVzLlNl",
-            "YXRUYWJsZUl0ZW0iNQoRUGxheWVyVHJ5UXVpdFJvb20SEAoIUGxheWVySUQY",
-            "ASABKAkSDgoGUm9vbUlEGAIgASgFInUKFFBsYXllclF1aXRSb29tUmVzdWx0",
-            "EhAKCFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBRISCgpRdWl0UmVz",
-            "dWx0GAMgASgFEicKCVNlYXRUYWJsZRgEIAMoCzIULlRleHVzLlNlYXRUYWJs",
-            "ZUl0ZW0iNQoNU2VhdFRhYmxlSXRlbRIQCghQbGF5ZXJJZBgBIAEoCRISCgpT",
-            "ZWF0TnVtYmVyGAIgASgFIj0KEkJyb2FkY2FzdFNlYXRUYWJsZRInCglTZWF0",
-            "VGFibGUYASADKAsyFC5UZXh1cy5TZWF0VGFibGVJdGVtIikKA0dldBIQCghQ",
-            "bGF5ZXJJRBgBIAEoCRIQCghQYXNzd29yZBgCIAEoCSIeCg5QbGF5ZXJTeW5j",
-            "RGF0YRIMCgROYW1lGAEgASgMIkMKD1BsYXllckNyZWF0ZVJlcRIQCghQbGF5",
-            "ZXJJRBgBIAEoCRIQCghQYXNzd29yZBgCIAEoCRIMCgROYW1lGAMgASgMIlEK",
-            "D1BsYXllckNyZWF0ZVJzcBIOCgZSZXN1bHQYASABKAUSEAoIUGxheWVySUQY",
-            "AiABKAkSDAoETmFtZRgDIAEoDBIOCgZSZWFzb24YBCABKAkq6QEKCkNMSUVO",
-            "VF9DTUQSFgoSQ0xJRU5UX0NNRF9JTlZBTElEEAASFgoQQ0xJRU5UX0NNRF9C",
-            "RUdJThCw6gESEQoLQ0xJRU5UX1BJTkcQseoBEhYKEENMSUVOVF9MT0dJTl9S",
-            "RVEQtOoBEhcKEUNMSUVOVF9DUkVBVEVfUkVRELXqARIZChNDTElFTlRfQU5O",
-            "T1VOQ0VfUkVRELbqARIaChRDTElFTlRfSk9JTl9ST09NX1JFURC36gESGgoU",
-            "Q0xJRU5UX1FVSVRfUk9PTV9SRVEQuOoBEhQKDkNMSUVOVF9DTURfRU5EEOiB",
-            "AiqXAgoKU0VSVkVSX0NNRBIWChJTRVJWRVJfQ01EX0lOVkFMSUQQABIVChBT",
-            "RVJWRVJfQ01EX0JFR0lOEOgHEhAKC1NFUlZFUl9QT05HEOkHEhUKEFNFUlZF",
-            "Ul9MT0dJTl9SU1AQ7AcSFgoRU0VSVkVSX0NSRUFURV9SU1AQ7QcSGAoTU0VS",
-            "VkVSX0FOTk9VTkNFX1JTUBDuBxIaChVTRVJWRVJfSlVER0VfSk9JTl9SU1AQ",
-            "7wcSGAoTU0VSVkVSX1FVSVRST09NX1JTUBDwBxIfChpTRVJWRVJfQlJPQURD",
-            "QVNUX1NFQVRUQUJMRRDxBxITCg5HTV9PUEVSQVRFX1JTUBDMCBITCg5TRVJW",
-            "RVJfQ01EX0VORBCQTiqZBAoRUFJPVE9fUkVTVUxUX0NPREUSGgoWU0VSVkVS",
-            "X0xPR0lOX1JFU1VMVF9PSxAAEhwKGFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJ",
-            "TBABEjQKJ1NFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9OT19TVUNIX1BMQVlF",
-            "UhD+//////////8BEiwKKFNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9BTFJF",
-            "QURZX0lOX0dBTUUQAxIiCh5TRVJWRVJfTE9HSU5fUkVTVUxUX0ZBSUxfV1JP",
-            "TkcQBBIWChJKT0lOUk9PTV9SRVNVTFRfT0sQBRIvCitKT0lOUk9PTV9SRVNV",
-            "TFRfRkFJTF9FWElTVElOR19QTEFZRVJfSU5ST09NEAYSJQohSk9JTlJPT01f",
-            "UkVTVUxUX0ZBSUxfTk9fU1VDSF9ST09NEAcSJQohSk9JTlJPT01fUkVTVUxU",
-            "X0ZBSUxfQkFEX1BMQVlFUklEEAgSLQopSk9JTlJPT01fUkVTVUxUX0ZBSUxf",
-            "UExBWUVSX0FNT1VOVF9FWENFRUQQCRIWChJRVUlUUk9PTV9SRVNVTFRfT0sQ",
-            "DxIYChRRVUlUUk9PTV9SRVNVTFRfRkFJTBAQEiUKIVFVSVRST09NX1JFU1VM",
-            "VF9GQUlMX05PX1NVQ0hfUk9PTRAREiMKH1FVSVRST09NX1JFU1VMVF9GQUlM",
-            "X0lOVkFMSURfSUQQEmIGcHJvdG8z"));
+            "CFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBSKAAQoQUGxheWVySm9p",
+            "blJlc3VsdBIQCghQbGF5ZXJJRBgBIAEoCRIOCgZSb29tSUQYAiABKAUSEgoK",
+            "Sm9pblJlc3VsdBgDIAEoBRInCglTZWF0VGFibGUYBCADKAsyFC5UZXh1cy5T",
+            "ZWF0VGFibGVJdGVtEg0KBW1vbmV5GAUgASgFIjUKEVBsYXllclRyeVF1aXRS",
+            "b29tEhAKCFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBSKEAQoUUGxh",
+            "eWVyUXVpdFJvb21SZXN1bHQSEAoIUGxheWVySUQYASABKAkSDgoGUm9vbUlE",
+            "GAIgASgFEhIKClF1aXRSZXN1bHQYAyABKAUSJwoJU2VhdFRhYmxlGAQgAygL",
+            "MhQuVGV4dXMuU2VhdFRhYmxlSXRlbRINCgVtb25leRgFIAEoBSI1Cg1TZWF0",
+            "VGFibGVJdGVtEhAKCFBsYXllcklkGAEgASgJEhIKClNlYXROdW1iZXIYAiAB",
+            "KAUiPQoSQnJvYWRjYXN0U2VhdFRhYmxlEicKCVNlYXRUYWJsZRgBIAMoCzIU",
+            "LlRleHVzLlNlYXRUYWJsZUl0ZW0iKQoDR2V0EhAKCFBsYXllcklEGAEgASgJ",
+            "EhAKCFBhc3N3b3JkGAIgASgJIh4KDlBsYXllclN5bmNEYXRhEgwKBE5hbWUY",
+            "ASABKAwiQwoPUGxheWVyQ3JlYXRlUmVxEhAKCFBsYXllcklEGAEgASgJEhAK",
+            "CFBhc3N3b3JkGAIgASgJEgwKBE5hbWUYAyABKAwiUQoPUGxheWVyQ3JlYXRl",
+            "UnNwEg4KBlJlc3VsdBgBIAEoBRIQCghQbGF5ZXJJRBgCIAEoCRIMCgROYW1l",
+            "GAMgASgMEg4KBlJlYXNvbhgEIAEoCSrpAQoKQ0xJRU5UX0NNRBIWChJDTElF",
+            "TlRfQ01EX0lOVkFMSUQQABIWChBDTElFTlRfQ01EX0JFR0lOELDqARIRCgtD",
+            "TElFTlRfUElORxCx6gESFgoQQ0xJRU5UX0xPR0lOX1JFURC06gESFwoRQ0xJ",
+            "RU5UX0NSRUFURV9SRVEQteoBEhkKE0NMSUVOVF9BTk5PVU5DRV9SRVEQtuoB",
+            "EhoKFENMSUVOVF9KT0lOX1JPT01fUkVRELfqARIaChRDTElFTlRfUVVJVF9S",
+            "T09NX1JFURC46gESFAoOQ0xJRU5UX0NNRF9FTkQQ6IECKpcCCgpTRVJWRVJf",
+            "Q01EEhYKElNFUlZFUl9DTURfSU5WQUxJRBAAEhUKEFNFUlZFUl9DTURfQkVH",
+            "SU4Q6AcSEAoLU0VSVkVSX1BPTkcQ6QcSFQoQU0VSVkVSX0xPR0lOX1JTUBDs",
+            "BxIWChFTRVJWRVJfQ1JFQVRFX1JTUBDtBxIYChNTRVJWRVJfQU5OT1VOQ0Vf",
+            "UlNQEO4HEhoKFVNFUlZFUl9KVURHRV9KT0lOX1JTUBDvBxIYChNTRVJWRVJf",
+            "UVVJVFJPT01fUlNQEPAHEh8KGlNFUlZFUl9CUk9BRENBU1RfU0VBVFRBQkxF",
+            "EPEHEhMKDkdNX09QRVJBVEVfUlNQEMwIEhMKDlNFUlZFUl9DTURfRU5EEJBO",
+            "KsMEChFQUk9UT19SRVNVTFRfQ09ERRIaChZTRVJWRVJfTE9HSU5fUkVTVUxU",
+            "X09LEAASHAoYU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlMEAESNAonU0VSVkVS",
+            "X0xPR0lOX1JFU1VMVF9GQUlMX05PX1NVQ0hfUExBWUVSEP7//////////wES",
+            "LAooU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlMX0FMUkVBRFlfSU5fR0FNRRAD",
+            "EiIKHlNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9XUk9ORxAEEhYKEkpPSU5S",
+            "T09NX1JFU1VMVF9PSxAFEi8KK0pPSU5ST09NX1JFU1VMVF9GQUlMX0VYSVNU",
+            "SU5HX1BMQVlFUl9JTlJPT00QBhIlCiFKT0lOUk9PTV9SRVNVTFRfRkFJTF9O",
+            "T19TVUNIX1JPT00QBxIlCiFKT0lOUk9PTV9SRVNVTFRfRkFJTF9CQURfUExB",
+            "WUVSSUQQCBItCilKT0lOUk9PTV9SRVNVTFRfRkFJTF9QTEFZRVJfQU1PVU5U",
+            "X0VYQ0VFRBAJEigKJEpPSU5ST09NX1JFU1VMVF9GQUlMX05PX0VOT1VHSF9N",
+            "T05FWRAKEhYKElFVSVRST09NX1JFU1VMVF9PSxAPEhgKFFFVSVRST09NX1JF",
+            "U1VMVF9GQUlMEBASJQohUVVJVFJPT01fUkVTVUxUX0ZBSUxfTk9fU1VDSF9S",
+            "T09NEBESIwofUVVJVFJPT01fUkVTVUxUX0ZBSUxfSU5WQUxJRF9JRBASYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Texus.CLIENT_CMD), typeof(global::Texus.SERVER_CMD), typeof(global::Texus.PROTO_RESULT_CODE), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerTryJoin), global::Texus.PlayerTryJoin.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerJoinResult), global::Texus.PlayerJoinResult.Parser, new[]{ "PlayerID", "RoomID", "JoinResult", "SeatTable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerJoinResult), global::Texus.PlayerJoinResult.Parser, new[]{ "PlayerID", "RoomID", "JoinResult", "SeatTable", "Money" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerTryQuitRoom), global::Texus.PlayerTryQuitRoom.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerQuitRoomResult), global::Texus.PlayerQuitRoomResult.Parser, new[]{ "PlayerID", "RoomID", "QuitResult", "SeatTable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerQuitRoomResult), global::Texus.PlayerQuitRoomResult.Parser, new[]{ "PlayerID", "RoomID", "QuitResult", "SeatTable", "Money" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.SeatTableItem), global::Texus.SeatTableItem.Parser, new[]{ "PlayerId", "SeatNumber" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.BroadcastSeatTable), global::Texus.BroadcastSeatTable.Parser, new[]{ "SeatTable" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.Get), global::Texus.Get.Parser, new[]{ "PlayerID", "Password" }, null, null, null),
@@ -132,6 +134,7 @@ namespace Texus {
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_NO_SUCH_ROOM")] JoinroomResultFailNoSuchRoom = 7,
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_BAD_PLAYERID")] JoinroomResultFailBadPlayerid = 8,
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED")] JoinroomResultFailPlayerAmountExceed = 9,
+    [pbr::OriginalName("JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY")] JoinroomResultFailNoEnoughMoney = 10,
     [pbr::OriginalName("QUITROOM_RESULT_OK")] QuitroomResultOk = 15,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL")] QuitroomResultFail = 16,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL_NO_SUCH_ROOM")] QuitroomResultFailNoSuchRoom = 17,
@@ -330,6 +333,7 @@ namespace Texus {
       roomID_ = other.roomID_;
       joinResult_ = other.joinResult_;
       seatTable_ = other.seatTable_.Clone();
+      money_ = other.money_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -381,6 +385,17 @@ namespace Texus {
       get { return seatTable_; }
     }
 
+    /// <summary>Field number for the "money" field.</summary>
+    public const int MoneyFieldNumber = 5;
+    private int money_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Money {
+      get { return money_; }
+      set {
+        money_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PlayerJoinResult);
@@ -398,6 +413,7 @@ namespace Texus {
       if (RoomID != other.RoomID) return false;
       if (JoinResult != other.JoinResult) return false;
       if(!seatTable_.Equals(other.seatTable_)) return false;
+      if (Money != other.Money) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -408,6 +424,7 @@ namespace Texus {
       if (RoomID != 0) hash ^= RoomID.GetHashCode();
       if (JoinResult != 0) hash ^= JoinResult.GetHashCode();
       hash ^= seatTable_.GetHashCode();
+      if (Money != 0) hash ^= Money.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -434,6 +451,10 @@ namespace Texus {
         output.WriteInt32(JoinResult);
       }
       seatTable_.WriteTo(output, _repeated_seatTable_codec);
+      if (Money != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Money);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -452,6 +473,9 @@ namespace Texus {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(JoinResult);
       }
       size += seatTable_.CalculateSize(_repeated_seatTable_codec);
+      if (Money != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Money);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -473,6 +497,9 @@ namespace Texus {
         JoinResult = other.JoinResult;
       }
       seatTable_.Add(other.seatTable_);
+      if (other.Money != 0) {
+        Money = other.Money;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -498,6 +525,10 @@ namespace Texus {
           }
           case 34: {
             seatTable_.AddEntriesFrom(input, _repeated_seatTable_codec);
+            break;
+          }
+          case 40: {
+            Money = input.ReadInt32();
             break;
           }
         }
@@ -692,6 +723,7 @@ namespace Texus {
       roomID_ = other.roomID_;
       quitResult_ = other.quitResult_;
       seatTable_ = other.seatTable_.Clone();
+      money_ = other.money_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -743,6 +775,17 @@ namespace Texus {
       get { return seatTable_; }
     }
 
+    /// <summary>Field number for the "money" field.</summary>
+    public const int MoneyFieldNumber = 5;
+    private int money_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Money {
+      get { return money_; }
+      set {
+        money_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PlayerQuitRoomResult);
@@ -760,6 +803,7 @@ namespace Texus {
       if (RoomID != other.RoomID) return false;
       if (QuitResult != other.QuitResult) return false;
       if(!seatTable_.Equals(other.seatTable_)) return false;
+      if (Money != other.Money) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -770,6 +814,7 @@ namespace Texus {
       if (RoomID != 0) hash ^= RoomID.GetHashCode();
       if (QuitResult != 0) hash ^= QuitResult.GetHashCode();
       hash ^= seatTable_.GetHashCode();
+      if (Money != 0) hash ^= Money.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -796,6 +841,10 @@ namespace Texus {
         output.WriteInt32(QuitResult);
       }
       seatTable_.WriteTo(output, _repeated_seatTable_codec);
+      if (Money != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Money);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -814,6 +863,9 @@ namespace Texus {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(QuitResult);
       }
       size += seatTable_.CalculateSize(_repeated_seatTable_codec);
+      if (Money != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Money);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -835,6 +887,9 @@ namespace Texus {
         QuitResult = other.QuitResult;
       }
       seatTable_.Add(other.seatTable_);
+      if (other.Money != 0) {
+        Money = other.Money;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -860,6 +915,10 @@ namespace Texus {
           }
           case 34: {
             seatTable_.AddEntriesFrom(input, _repeated_seatTable_codec);
+            break;
+          }
+          case 40: {
+            Money = input.ReadInt32();
             break;
           }
         }
