@@ -39,7 +39,7 @@ namespace protobuf_texus_5froom_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[10];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -50,6 +50,15 @@ namespace Texus {
 class BroadcastSeatTable;
 class BroadcastSeatTableDefaultTypeInternal;
 extern BroadcastSeatTableDefaultTypeInternal _BroadcastSeatTable_default_instance_;
+class Card;
+class CardDefaultTypeInternal;
+extern CardDefaultTypeInternal _Card_default_instance_;
+class GameStart;
+class GameStartDefaultTypeInternal;
+extern GameStartDefaultTypeInternal _GameStart_default_instance_;
+class GameStartResult;
+class GameStartResultDefaultTypeInternal;
+extern GameStartResultDefaultTypeInternal _GameStartResult_default_instance_;
 class Get;
 class GetDefaultTypeInternal;
 extern GetDefaultTypeInternal _Get_default_instance_;
@@ -81,6 +90,9 @@ extern SeatTableItemDefaultTypeInternal _SeatTableItem_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::Texus::BroadcastSeatTable* Arena::CreateMaybeMessage<::Texus::BroadcastSeatTable>(Arena*);
+template<> ::Texus::Card* Arena::CreateMaybeMessage<::Texus::Card>(Arena*);
+template<> ::Texus::GameStart* Arena::CreateMaybeMessage<::Texus::GameStart>(Arena*);
+template<> ::Texus::GameStartResult* Arena::CreateMaybeMessage<::Texus::GameStartResult>(Arena*);
 template<> ::Texus::Get* Arena::CreateMaybeMessage<::Texus::Get>(Arena*);
 template<> ::Texus::PlayerCreateReq* Arena::CreateMaybeMessage<::Texus::PlayerCreateReq>(Arena*);
 template<> ::Texus::PlayerCreateRsp* Arena::CreateMaybeMessage<::Texus::PlayerCreateRsp>(Arena*);
@@ -103,6 +115,7 @@ enum CLIENT_CMD {
   CLIENT_ANNOUNCE_REQ = 30006,
   CLIENT_JOIN_ROOM_REQ = 30007,
   CLIENT_QUIT_ROOM_REQ = 30008,
+  CLIENT_GAMESTART_REQ = 30009,
   CLIENT_CMD_END = 33000,
   CLIENT_CMD_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   CLIENT_CMD_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
@@ -132,6 +145,8 @@ enum SERVER_CMD {
   SERVER_JUDGE_JOIN_RSP = 1007,
   SERVER_QUITROOM_RSP = 1008,
   SERVER_BROADCAST_SEATTABLE = 1009,
+  SERVER_GAMESTART_RSP = 1010,
+  SERVER_BROADCAST_GAMESTART = 1011,
   GM_OPERATE_RSP = 1100,
   SERVER_CMD_END = 10000,
   SERVER_CMD_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
@@ -164,16 +179,22 @@ enum PROTO_RESULT_CODE {
   JOINROOM_RESULT_FAIL_BAD_PLAYERID = 8,
   JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED = 9,
   JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY = 10,
+  JOINROOM_RESULT_FAIL_ROOM_ALREADY_IN_GAME = 11,
   QUITROOM_RESULT_OK = 15,
   QUITROOM_RESULT_FAIL = 16,
   QUITROOM_RESULT_FAIL_NO_SUCH_ROOM = 17,
   QUITROOM_RESULT_FAIL_INVALID_ID = 18,
+  GAMESTART_OK = 19,
+  GAMESTART_FAIL_NO_SUCH_ROOM = 20,
+  GAMESTART_FAIL_NOT_ROOM_OWNER = 21,
+  GAMESTART_FAIL_NO_ENOUGH_USER = 22,
+  GAMESTART_FAIL_ROOM_ALREADY_IN_GAME = 23,
   PROTO_RESULT_CODE_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   PROTO_RESULT_CODE_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool PROTO_RESULT_CODE_IsValid(int value);
 const PROTO_RESULT_CODE PROTO_RESULT_CODE_MIN = SERVER_LOGIN_RESULT_FAIL_NO_SUCH_PLAYER;
-const PROTO_RESULT_CODE PROTO_RESULT_CODE_MAX = QUITROOM_RESULT_FAIL_INVALID_ID;
+const PROTO_RESULT_CODE PROTO_RESULT_CODE_MAX = GAMESTART_FAIL_ROOM_ALREADY_IN_GAME;
 const int PROTO_RESULT_CODE_ARRAYSIZE = PROTO_RESULT_CODE_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* PROTO_RESULT_CODE_descriptor();
@@ -187,6 +208,234 @@ inline bool PROTO_RESULT_CODE_Parse(
     PROTO_RESULT_CODE_descriptor(), name, value);
 }
 // ===================================================================
+
+class SeatTableItem : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.SeatTableItem) */ {
+ public:
+  SeatTableItem();
+  virtual ~SeatTableItem();
+
+  SeatTableItem(const SeatTableItem& from);
+
+  inline SeatTableItem& operator=(const SeatTableItem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SeatTableItem(SeatTableItem&& from) noexcept
+    : SeatTableItem() {
+    *this = ::std::move(from);
+  }
+
+  inline SeatTableItem& operator=(SeatTableItem&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SeatTableItem& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SeatTableItem* internal_default_instance() {
+    return reinterpret_cast<const SeatTableItem*>(
+               &_SeatTableItem_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(SeatTableItem* other);
+  friend void swap(SeatTableItem& a, SeatTableItem& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SeatTableItem* New() const final {
+    return CreateMaybeMessage<SeatTableItem>(NULL);
+  }
+
+  SeatTableItem* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SeatTableItem>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SeatTableItem& from);
+  void MergeFrom(const SeatTableItem& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SeatTableItem* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string PlayerID = 1;
+  void clear_playerid();
+  static const int kPlayerIDFieldNumber = 1;
+  const ::std::string& playerid() const;
+  void set_playerid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_playerid(::std::string&& value);
+  #endif
+  void set_playerid(const char* value);
+  void set_playerid(const char* value, size_t size);
+  ::std::string* mutable_playerid();
+  ::std::string* release_playerid();
+  void set_allocated_playerid(::std::string* playerid);
+
+  // int32 SeatNumber = 2;
+  void clear_seatnumber();
+  static const int kSeatNumberFieldNumber = 2;
+  ::google::protobuf::int32 seatnumber() const;
+  void set_seatnumber(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Texus.SeatTableItem)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr playerid_;
+  ::google::protobuf::int32 seatnumber_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.Card) */ {
+ public:
+  Card();
+  virtual ~Card();
+
+  Card(const Card& from);
+
+  inline Card& operator=(const Card& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Card(Card&& from) noexcept
+    : Card() {
+    *this = ::std::move(from);
+  }
+
+  inline Card& operator=(Card&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Card& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Card* internal_default_instance() {
+    return reinterpret_cast<const Card*>(
+               &_Card_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(Card* other);
+  friend void swap(Card& a, Card& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Card* New() const final {
+    return CreateMaybeMessage<Card>(NULL);
+  }
+
+  Card* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Card>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Card& from);
+  void MergeFrom(const Card& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Card* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 suit = 1;
+  void clear_suit();
+  static const int kSuitFieldNumber = 1;
+  ::google::protobuf::int32 suit() const;
+  void set_suit(::google::protobuf::int32 value);
+
+  // int32 rank = 2;
+  void clear_rank();
+  static const int kRankFieldNumber = 2;
+  ::google::protobuf::int32 rank() const;
+  void set_rank(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Texus.Card)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 suit_;
+  ::google::protobuf::int32 rank_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class PlayerTryJoin : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.PlayerTryJoin) */ {
  public:
@@ -223,7 +472,7 @@ class PlayerTryJoin : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_PlayerTryJoin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(PlayerTryJoin* other);
   friend void swap(PlayerTryJoin& a, PlayerTryJoin& b) {
@@ -341,7 +590,7 @@ class PlayerJoinResult : public ::google::protobuf::Message /* @@protoc_insertio
                &_PlayerJoinResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(PlayerJoinResult* other);
   friend void swap(PlayerJoinResult& a, PlayerJoinResult& b) {
@@ -486,7 +735,7 @@ class PlayerTryQuitRoom : public ::google::protobuf::Message /* @@protoc_inserti
                &_PlayerTryQuitRoom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(PlayerTryQuitRoom* other);
   friend void swap(PlayerTryQuitRoom& a, PlayerTryQuitRoom& b) {
@@ -604,7 +853,7 @@ class PlayerQuitRoomResult : public ::google::protobuf::Message /* @@protoc_inse
                &_PlayerQuitRoomResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(PlayerQuitRoomResult* other);
   friend void swap(PlayerQuitRoomResult& a, PlayerQuitRoomResult& b) {
@@ -714,124 +963,6 @@ class PlayerQuitRoomResult : public ::google::protobuf::Message /* @@protoc_inse
 };
 // -------------------------------------------------------------------
 
-class SeatTableItem : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.SeatTableItem) */ {
- public:
-  SeatTableItem();
-  virtual ~SeatTableItem();
-
-  SeatTableItem(const SeatTableItem& from);
-
-  inline SeatTableItem& operator=(const SeatTableItem& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  SeatTableItem(SeatTableItem&& from) noexcept
-    : SeatTableItem() {
-    *this = ::std::move(from);
-  }
-
-  inline SeatTableItem& operator=(SeatTableItem&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const SeatTableItem& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SeatTableItem* internal_default_instance() {
-    return reinterpret_cast<const SeatTableItem*>(
-               &_SeatTableItem_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(SeatTableItem* other);
-  friend void swap(SeatTableItem& a, SeatTableItem& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline SeatTableItem* New() const final {
-    return CreateMaybeMessage<SeatTableItem>(NULL);
-  }
-
-  SeatTableItem* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SeatTableItem>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SeatTableItem& from);
-  void MergeFrom(const SeatTableItem& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SeatTableItem* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string PlayerId = 1;
-  void clear_playerid();
-  static const int kPlayerIdFieldNumber = 1;
-  const ::std::string& playerid() const;
-  void set_playerid(const ::std::string& value);
-  #if LANG_CXX11
-  void set_playerid(::std::string&& value);
-  #endif
-  void set_playerid(const char* value);
-  void set_playerid(const char* value, size_t size);
-  ::std::string* mutable_playerid();
-  ::std::string* release_playerid();
-  void set_allocated_playerid(::std::string* playerid);
-
-  // int32 SeatNumber = 2;
-  void clear_seatnumber();
-  static const int kSeatNumberFieldNumber = 2;
-  ::google::protobuf::int32 seatnumber() const;
-  void set_seatnumber(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:Texus.SeatTableItem)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr playerid_;
-  ::google::protobuf::int32 seatnumber_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class BroadcastSeatTable : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.BroadcastSeatTable) */ {
  public:
   BroadcastSeatTable();
@@ -867,7 +998,7 @@ class BroadcastSeatTable : public ::google::protobuf::Message /* @@protoc_insert
                &_BroadcastSeatTable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(BroadcastSeatTable* other);
   friend void swap(BroadcastSeatTable& a, BroadcastSeatTable& b) {
@@ -941,6 +1072,275 @@ class BroadcastSeatTable : public ::google::protobuf::Message /* @@protoc_insert
 };
 // -------------------------------------------------------------------
 
+class GameStart : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.GameStart) */ {
+ public:
+  GameStart();
+  virtual ~GameStart();
+
+  GameStart(const GameStart& from);
+
+  inline GameStart& operator=(const GameStart& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GameStart(GameStart&& from) noexcept
+    : GameStart() {
+    *this = ::std::move(from);
+  }
+
+  inline GameStart& operator=(GameStart&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GameStart& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GameStart* internal_default_instance() {
+    return reinterpret_cast<const GameStart*>(
+               &_GameStart_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(GameStart* other);
+  friend void swap(GameStart& a, GameStart& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GameStart* New() const final {
+    return CreateMaybeMessage<GameStart>(NULL);
+  }
+
+  GameStart* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GameStart>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GameStart& from);
+  void MergeFrom(const GameStart& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GameStart* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string PlayerID = 1;
+  void clear_playerid();
+  static const int kPlayerIDFieldNumber = 1;
+  const ::std::string& playerid() const;
+  void set_playerid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_playerid(::std::string&& value);
+  #endif
+  void set_playerid(const char* value);
+  void set_playerid(const char* value, size_t size);
+  ::std::string* mutable_playerid();
+  ::std::string* release_playerid();
+  void set_allocated_playerid(::std::string* playerid);
+
+  // int32 RoomID = 2;
+  void clear_roomid();
+  static const int kRoomIDFieldNumber = 2;
+  ::google::protobuf::int32 roomid() const;
+  void set_roomid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Texus.GameStart)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr playerid_;
+  ::google::protobuf::int32 roomid_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class GameStartResult : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.GameStartResult) */ {
+ public:
+  GameStartResult();
+  virtual ~GameStartResult();
+
+  GameStartResult(const GameStartResult& from);
+
+  inline GameStartResult& operator=(const GameStartResult& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  GameStartResult(GameStartResult&& from) noexcept
+    : GameStartResult() {
+    *this = ::std::move(from);
+  }
+
+  inline GameStartResult& operator=(GameStartResult&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const GameStartResult& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GameStartResult* internal_default_instance() {
+    return reinterpret_cast<const GameStartResult*>(
+               &_GameStartResult_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(GameStartResult* other);
+  friend void swap(GameStartResult& a, GameStartResult& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GameStartResult* New() const final {
+    return CreateMaybeMessage<GameStartResult>(NULL);
+  }
+
+  GameStartResult* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GameStartResult>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const GameStartResult& from);
+  void MergeFrom(const GameStartResult& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GameStartResult* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .Texus.Card flop = 4;
+  int flop_size() const;
+  void clear_flop();
+  static const int kFlopFieldNumber = 4;
+  ::Texus::Card* mutable_flop(int index);
+  ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
+      mutable_flop();
+  const ::Texus::Card& flop(int index) const;
+  ::Texus::Card* add_flop();
+  const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
+      flop() const;
+
+  // repeated .Texus.Card hole = 5;
+  int hole_size() const;
+  void clear_hole();
+  static const int kHoleFieldNumber = 5;
+  ::Texus::Card* mutable_hole(int index);
+  ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
+      mutable_hole();
+  const ::Texus::Card& hole(int index) const;
+  ::Texus::Card* add_hole();
+  const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
+      hole() const;
+
+  // string PlayerID = 1;
+  void clear_playerid();
+  static const int kPlayerIDFieldNumber = 1;
+  const ::std::string& playerid() const;
+  void set_playerid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_playerid(::std::string&& value);
+  #endif
+  void set_playerid(const char* value);
+  void set_playerid(const char* value, size_t size);
+  ::std::string* mutable_playerid();
+  ::std::string* release_playerid();
+  void set_allocated_playerid(::std::string* playerid);
+
+  // int32 RoomID = 2;
+  void clear_roomid();
+  static const int kRoomIDFieldNumber = 2;
+  ::google::protobuf::int32 roomid() const;
+  void set_roomid(::google::protobuf::int32 value);
+
+  // int32 GameStartResult = 3;
+  void clear_gamestartresult();
+  static const int kGameStartResultFieldNumber = 3;
+  ::google::protobuf::int32 gamestartresult() const;
+  void set_gamestartresult(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:Texus.GameStartResult)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::Texus::Card > flop_;
+  ::google::protobuf::RepeatedPtrField< ::Texus::Card > hole_;
+  ::google::protobuf::internal::ArenaStringPtr playerid_;
+  ::google::protobuf::int32 roomid_;
+  ::google::protobuf::int32 gamestartresult_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_texus_5froom_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Get : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Texus.Get) */ {
  public:
   Get();
@@ -976,7 +1376,7 @@ class Get : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Get_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    9;
 
   void Swap(Get* other);
   friend void swap(Get& a, Get& b) {
@@ -1102,7 +1502,7 @@ class PlayerSyncData : public ::google::protobuf::Message /* @@protoc_insertion_
                &_PlayerSyncData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    10;
 
   void Swap(PlayerSyncData* other);
   friend void swap(PlayerSyncData& a, PlayerSyncData& b) {
@@ -1213,7 +1613,7 @@ class PlayerCreateReq : public ::google::protobuf::Message /* @@protoc_insertion
                &_PlayerCreateReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    11;
 
   void Swap(PlayerCreateReq* other);
   friend void swap(PlayerCreateReq& a, PlayerCreateReq& b) {
@@ -1354,7 +1754,7 @@ class PlayerCreateRsp : public ::google::protobuf::Message /* @@protoc_insertion
                &_PlayerCreateRsp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    12;
 
   void Swap(PlayerCreateRsp* other);
   friend void swap(PlayerCreateRsp& a, PlayerCreateRsp& b) {
@@ -1474,6 +1874,109 @@ class PlayerCreateRsp : public ::google::protobuf::Message /* @@protoc_insertion
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// SeatTableItem
+
+// string PlayerID = 1;
+inline void SeatTableItem::clear_playerid() {
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SeatTableItem::playerid() const {
+  // @@protoc_insertion_point(field_get:Texus.SeatTableItem.PlayerID)
+  return playerid_.GetNoArena();
+}
+inline void SeatTableItem::set_playerid(const ::std::string& value) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Texus.SeatTableItem.PlayerID)
+}
+#if LANG_CXX11
+inline void SeatTableItem::set_playerid(::std::string&& value) {
+  
+  playerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Texus.SeatTableItem.PlayerID)
+}
+#endif
+inline void SeatTableItem::set_playerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Texus.SeatTableItem.PlayerID)
+}
+inline void SeatTableItem::set_playerid(const char* value, size_t size) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Texus.SeatTableItem.PlayerID)
+}
+inline ::std::string* SeatTableItem::mutable_playerid() {
+  
+  // @@protoc_insertion_point(field_mutable:Texus.SeatTableItem.PlayerID)
+  return playerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SeatTableItem::release_playerid() {
+  // @@protoc_insertion_point(field_release:Texus.SeatTableItem.PlayerID)
+  
+  return playerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SeatTableItem::set_allocated_playerid(::std::string* playerid) {
+  if (playerid != NULL) {
+    
+  } else {
+    
+  }
+  playerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), playerid);
+  // @@protoc_insertion_point(field_set_allocated:Texus.SeatTableItem.PlayerID)
+}
+
+// int32 SeatNumber = 2;
+inline void SeatTableItem::clear_seatnumber() {
+  seatnumber_ = 0;
+}
+inline ::google::protobuf::int32 SeatTableItem::seatnumber() const {
+  // @@protoc_insertion_point(field_get:Texus.SeatTableItem.SeatNumber)
+  return seatnumber_;
+}
+inline void SeatTableItem::set_seatnumber(::google::protobuf::int32 value) {
+  
+  seatnumber_ = value;
+  // @@protoc_insertion_point(field_set:Texus.SeatTableItem.SeatNumber)
+}
+
+// -------------------------------------------------------------------
+
+// Card
+
+// int32 suit = 1;
+inline void Card::clear_suit() {
+  suit_ = 0;
+}
+inline ::google::protobuf::int32 Card::suit() const {
+  // @@protoc_insertion_point(field_get:Texus.Card.suit)
+  return suit_;
+}
+inline void Card::set_suit(::google::protobuf::int32 value) {
+  
+  suit_ = value;
+  // @@protoc_insertion_point(field_set:Texus.Card.suit)
+}
+
+// int32 rank = 2;
+inline void Card::clear_rank() {
+  rank_ = 0;
+}
+inline ::google::protobuf::int32 Card::rank() const {
+  // @@protoc_insertion_point(field_get:Texus.Card.rank)
+  return rank_;
+}
+inline void Card::set_rank(::google::protobuf::int32 value) {
+  
+  rank_ = value;
+  // @@protoc_insertion_point(field_set:Texus.Card.rank)
+}
+
+// -------------------------------------------------------------------
+
 // PlayerTryJoin
 
 // string PlayerID = 1;
@@ -1874,77 +2377,6 @@ inline void PlayerQuitRoomResult::set_money(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
-// SeatTableItem
-
-// string PlayerId = 1;
-inline void SeatTableItem::clear_playerid() {
-  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SeatTableItem::playerid() const {
-  // @@protoc_insertion_point(field_get:Texus.SeatTableItem.PlayerId)
-  return playerid_.GetNoArena();
-}
-inline void SeatTableItem::set_playerid(const ::std::string& value) {
-  
-  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:Texus.SeatTableItem.PlayerId)
-}
-#if LANG_CXX11
-inline void SeatTableItem::set_playerid(::std::string&& value) {
-  
-  playerid_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:Texus.SeatTableItem.PlayerId)
-}
-#endif
-inline void SeatTableItem::set_playerid(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Texus.SeatTableItem.PlayerId)
-}
-inline void SeatTableItem::set_playerid(const char* value, size_t size) {
-  
-  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Texus.SeatTableItem.PlayerId)
-}
-inline ::std::string* SeatTableItem::mutable_playerid() {
-  
-  // @@protoc_insertion_point(field_mutable:Texus.SeatTableItem.PlayerId)
-  return playerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SeatTableItem::release_playerid() {
-  // @@protoc_insertion_point(field_release:Texus.SeatTableItem.PlayerId)
-  
-  return playerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SeatTableItem::set_allocated_playerid(::std::string* playerid) {
-  if (playerid != NULL) {
-    
-  } else {
-    
-  }
-  playerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), playerid);
-  // @@protoc_insertion_point(field_set_allocated:Texus.SeatTableItem.PlayerId)
-}
-
-// int32 SeatNumber = 2;
-inline void SeatTableItem::clear_seatnumber() {
-  seatnumber_ = 0;
-}
-inline ::google::protobuf::int32 SeatTableItem::seatnumber() const {
-  // @@protoc_insertion_point(field_get:Texus.SeatTableItem.SeatNumber)
-  return seatnumber_;
-}
-inline void SeatTableItem::set_seatnumber(::google::protobuf::int32 value) {
-  
-  seatnumber_ = value;
-  // @@protoc_insertion_point(field_set:Texus.SeatTableItem.SeatNumber)
-}
-
-// -------------------------------------------------------------------
-
 // BroadcastSeatTable
 
 // repeated .Texus.SeatTableItem SeatTable = 1;
@@ -1975,6 +2407,222 @@ inline const ::google::protobuf::RepeatedPtrField< ::Texus::SeatTableItem >&
 BroadcastSeatTable::seattable() const {
   // @@protoc_insertion_point(field_list:Texus.BroadcastSeatTable.SeatTable)
   return seattable_;
+}
+
+// -------------------------------------------------------------------
+
+// GameStart
+
+// string PlayerID = 1;
+inline void GameStart::clear_playerid() {
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GameStart::playerid() const {
+  // @@protoc_insertion_point(field_get:Texus.GameStart.PlayerID)
+  return playerid_.GetNoArena();
+}
+inline void GameStart::set_playerid(const ::std::string& value) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Texus.GameStart.PlayerID)
+}
+#if LANG_CXX11
+inline void GameStart::set_playerid(::std::string&& value) {
+  
+  playerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Texus.GameStart.PlayerID)
+}
+#endif
+inline void GameStart::set_playerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Texus.GameStart.PlayerID)
+}
+inline void GameStart::set_playerid(const char* value, size_t size) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Texus.GameStart.PlayerID)
+}
+inline ::std::string* GameStart::mutable_playerid() {
+  
+  // @@protoc_insertion_point(field_mutable:Texus.GameStart.PlayerID)
+  return playerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GameStart::release_playerid() {
+  // @@protoc_insertion_point(field_release:Texus.GameStart.PlayerID)
+  
+  return playerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GameStart::set_allocated_playerid(::std::string* playerid) {
+  if (playerid != NULL) {
+    
+  } else {
+    
+  }
+  playerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), playerid);
+  // @@protoc_insertion_point(field_set_allocated:Texus.GameStart.PlayerID)
+}
+
+// int32 RoomID = 2;
+inline void GameStart::clear_roomid() {
+  roomid_ = 0;
+}
+inline ::google::protobuf::int32 GameStart::roomid() const {
+  // @@protoc_insertion_point(field_get:Texus.GameStart.RoomID)
+  return roomid_;
+}
+inline void GameStart::set_roomid(::google::protobuf::int32 value) {
+  
+  roomid_ = value;
+  // @@protoc_insertion_point(field_set:Texus.GameStart.RoomID)
+}
+
+// -------------------------------------------------------------------
+
+// GameStartResult
+
+// string PlayerID = 1;
+inline void GameStartResult::clear_playerid() {
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& GameStartResult::playerid() const {
+  // @@protoc_insertion_point(field_get:Texus.GameStartResult.PlayerID)
+  return playerid_.GetNoArena();
+}
+inline void GameStartResult::set_playerid(const ::std::string& value) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:Texus.GameStartResult.PlayerID)
+}
+#if LANG_CXX11
+inline void GameStartResult::set_playerid(::std::string&& value) {
+  
+  playerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:Texus.GameStartResult.PlayerID)
+}
+#endif
+inline void GameStartResult::set_playerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:Texus.GameStartResult.PlayerID)
+}
+inline void GameStartResult::set_playerid(const char* value, size_t size) {
+  
+  playerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:Texus.GameStartResult.PlayerID)
+}
+inline ::std::string* GameStartResult::mutable_playerid() {
+  
+  // @@protoc_insertion_point(field_mutable:Texus.GameStartResult.PlayerID)
+  return playerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* GameStartResult::release_playerid() {
+  // @@protoc_insertion_point(field_release:Texus.GameStartResult.PlayerID)
+  
+  return playerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void GameStartResult::set_allocated_playerid(::std::string* playerid) {
+  if (playerid != NULL) {
+    
+  } else {
+    
+  }
+  playerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), playerid);
+  // @@protoc_insertion_point(field_set_allocated:Texus.GameStartResult.PlayerID)
+}
+
+// int32 RoomID = 2;
+inline void GameStartResult::clear_roomid() {
+  roomid_ = 0;
+}
+inline ::google::protobuf::int32 GameStartResult::roomid() const {
+  // @@protoc_insertion_point(field_get:Texus.GameStartResult.RoomID)
+  return roomid_;
+}
+inline void GameStartResult::set_roomid(::google::protobuf::int32 value) {
+  
+  roomid_ = value;
+  // @@protoc_insertion_point(field_set:Texus.GameStartResult.RoomID)
+}
+
+// int32 GameStartResult = 3;
+inline void GameStartResult::clear_gamestartresult() {
+  gamestartresult_ = 0;
+}
+inline ::google::protobuf::int32 GameStartResult::gamestartresult() const {
+  // @@protoc_insertion_point(field_get:Texus.GameStartResult.GameStartResult)
+  return gamestartresult_;
+}
+inline void GameStartResult::set_gamestartresult(::google::protobuf::int32 value) {
+  
+  gamestartresult_ = value;
+  // @@protoc_insertion_point(field_set:Texus.GameStartResult.GameStartResult)
+}
+
+// repeated .Texus.Card flop = 4;
+inline int GameStartResult::flop_size() const {
+  return flop_.size();
+}
+inline void GameStartResult::clear_flop() {
+  flop_.Clear();
+}
+inline ::Texus::Card* GameStartResult::mutable_flop(int index) {
+  // @@protoc_insertion_point(field_mutable:Texus.GameStartResult.flop)
+  return flop_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
+GameStartResult::mutable_flop() {
+  // @@protoc_insertion_point(field_mutable_list:Texus.GameStartResult.flop)
+  return &flop_;
+}
+inline const ::Texus::Card& GameStartResult::flop(int index) const {
+  // @@protoc_insertion_point(field_get:Texus.GameStartResult.flop)
+  return flop_.Get(index);
+}
+inline ::Texus::Card* GameStartResult::add_flop() {
+  // @@protoc_insertion_point(field_add:Texus.GameStartResult.flop)
+  return flop_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
+GameStartResult::flop() const {
+  // @@protoc_insertion_point(field_list:Texus.GameStartResult.flop)
+  return flop_;
+}
+
+// repeated .Texus.Card hole = 5;
+inline int GameStartResult::hole_size() const {
+  return hole_.size();
+}
+inline void GameStartResult::clear_hole() {
+  hole_.Clear();
+}
+inline ::Texus::Card* GameStartResult::mutable_hole(int index) {
+  // @@protoc_insertion_point(field_mutable:Texus.GameStartResult.hole)
+  return hole_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::Texus::Card >*
+GameStartResult::mutable_hole() {
+  // @@protoc_insertion_point(field_mutable_list:Texus.GameStartResult.hole)
+  return &hole_;
+}
+inline const ::Texus::Card& GameStartResult::hole(int index) const {
+  // @@protoc_insertion_point(field_get:Texus.GameStartResult.hole)
+  return hole_.Get(index);
+}
+inline ::Texus::Card* GameStartResult::add_hole() {
+  // @@protoc_insertion_point(field_add:Texus.GameStartResult.hole)
+  return hole_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::Texus::Card >&
+GameStartResult::hole() const {
+  // @@protoc_insertion_point(field_list:Texus.GameStartResult.hole)
+  return hole_;
 }
 
 // -------------------------------------------------------------------
@@ -2487,6 +3135,12 @@ inline void PlayerCreateRsp::set_allocated_reason(::std::string* reason) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -13,6 +13,8 @@ enum CLIENT_CMD {
 
 	CLIENT_JOIN_ROOM_REQ = 30007;//客户端请求加入特定房间的请求
 	CLIENT_QUIT_ROOM_REQ = 30008;//客户端请求退出房间的请求
+
+	CLIENT_GAMESTART_REQ = 30009;
 	
 	CLIENT_CMD_END = 33000;
 }
@@ -31,6 +33,9 @@ enum SERVER_CMD {
 	SERVER_QUITROOM_RSP = 1008;//服务端反馈退出房间结果的告知
 
 	SERVER_BROADCAST_SEATTABLE = 1009;
+
+	SERVER_GAMESTART_RSP = 1010;
+	SERVER_BROADCAST_GAMESTART = 1011;
 
 	GM_OPERATE_RSP = 1100;
 
@@ -51,11 +56,27 @@ enum PROTO_RESULT_CODE{
 	JOINROOM_RESULT_FAIL_BAD_PLAYERID = 8;
 	JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED = 9;
 	JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY = 10;
+	JOINROOM_RESULT_FAIL_ROOM_ALREADY_IN_GAME =11;
 
 	QUITROOM_RESULT_OK = 15;
 	QUITROOM_RESULT_FAIL = 16;
 	QUITROOM_RESULT_FAIL_NO_SUCH_ROOM=17;
 	QUITROOM_RESULT_FAIL_INVALID_ID=18;
+
+	GAMESTART_OK = 19;
+	GAMESTART_FAIL_NO_SUCH_ROOM=20;
+	GAMESTART_FAIL_NOT_ROOM_OWNER=21;
+	GAMESTART_FAIL_NO_ENOUGH_USER=22;
+	GAMESTART_FAIL_ROOM_ALREADY_IN_GAME=23;
+}
+message SeatTableItem {
+	string PlayerID = 1;
+	int32 SeatNumber = 2;
+}
+
+message Card {
+	int32 suit=1;
+	int32 rank=2;
 }
 
 message PlayerTryJoin {
@@ -85,13 +106,21 @@ message PlayerQuitRoomResult {
 	int32 money = 5;
 }
 
-message SeatTableItem {
-	string PlayerId = 1;
-	int32 SeatNumber = 2;
-}
-
 message BroadcastSeatTable{
 	repeated SeatTableItem SeatTable= 1;
+}
+
+message GameStart{
+	string PlayerID	=1;
+	int32 RoomID =2 ;
+}
+
+message GameStartResult{
+	string PlayerID=1;
+	int32 RoomID =2;
+	int32 GameStartResult=3;
+	repeated Card flop=4;
+	repeated Card hole=5;
 }
 
 message Get {

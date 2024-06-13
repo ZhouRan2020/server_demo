@@ -20,9 +20,20 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_texus_5froom_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_texus_5froom_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Card;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_texus_5froom_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SeatTableItem;
 }  // namespace protobuf_texus_5froom_2eproto
 namespace Texus {
+class SeatTableItemDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SeatTableItem>
+      _instance;
+} _SeatTableItem_default_instance_;
+class CardDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Card>
+      _instance;
+} _Card_default_instance_;
 class PlayerTryJoinDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<PlayerTryJoin>
@@ -43,16 +54,21 @@ class PlayerQuitRoomResultDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<PlayerQuitRoomResult>
       _instance;
 } _PlayerQuitRoomResult_default_instance_;
-class SeatTableItemDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SeatTableItem>
-      _instance;
-} _SeatTableItem_default_instance_;
 class BroadcastSeatTableDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<BroadcastSeatTable>
       _instance;
 } _BroadcastSeatTable_default_instance_;
+class GameStartDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GameStart>
+      _instance;
+} _GameStart_default_instance_;
+class GameStartResultDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<GameStartResult>
+      _instance;
+} _GameStartResult_default_instance_;
 class GetDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Get>
@@ -75,6 +91,34 @@ class PlayerCreateRspDefaultTypeInternal {
 } _PlayerCreateRsp_default_instance_;
 }  // namespace Texus
 namespace protobuf_texus_5froom_2eproto {
+static void InitDefaultsSeatTableItem() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::Texus::_SeatTableItem_default_instance_;
+    new (ptr) ::Texus::SeatTableItem();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::Texus::SeatTableItem::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_SeatTableItem =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSeatTableItem}, {}};
+
+static void InitDefaultsCard() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::Texus::_Card_default_instance_;
+    new (ptr) ::Texus::Card();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::Texus::Card::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Card =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCard}, {}};
+
 static void InitDefaultsPlayerTryJoin() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -133,20 +177,6 @@ static void InitDefaultsPlayerQuitRoomResult() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPlayerQuitRoomResult}, {
       &protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base,}};
 
-static void InitDefaultsSeatTableItem() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Texus::_SeatTableItem_default_instance_;
-    new (ptr) ::Texus::SeatTableItem();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Texus::SeatTableItem::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SeatTableItem =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSeatTableItem}, {}};
-
 static void InitDefaultsBroadcastSeatTable() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -161,6 +191,35 @@ static void InitDefaultsBroadcastSeatTable() {
 ::google::protobuf::internal::SCCInfo<1> scc_info_BroadcastSeatTable =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsBroadcastSeatTable}, {
       &protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base,}};
+
+static void InitDefaultsGameStart() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::Texus::_GameStart_default_instance_;
+    new (ptr) ::Texus::GameStart();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::Texus::GameStart::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_GameStart =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGameStart}, {}};
+
+static void InitDefaultsGameStartResult() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::Texus::_GameStartResult_default_instance_;
+    new (ptr) ::Texus::GameStartResult();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::Texus::GameStartResult::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_GameStartResult =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsGameStartResult}, {
+      &protobuf_texus_5froom_2eproto::scc_info_Card.base,}};
 
 static void InitDefaultsGet() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -219,22 +278,39 @@ static void InitDefaultsPlayerCreateRsp() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPlayerCreateRsp}, {}};
 
 void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_SeatTableItem.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Card.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerTryJoin.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerJoinResult.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerTryQuitRoom.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerQuitRoomResult.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SeatTableItem.base);
   ::google::protobuf::internal::InitSCC(&scc_info_BroadcastSeatTable.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GameStart.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_GameStartResult.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Get.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerSyncData.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerCreateReq.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PlayerCreateRsp.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[10];
+::google::protobuf::Metadata file_level_metadata[13];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[3];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, playerid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, seatnumber_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::Card, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::Card, suit_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::Card, rank_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerTryJoin, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -270,18 +346,28 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, seattable_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerQuitRoomResult, money_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, playerid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::SeatTableItem, seatnumber_),
-  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::BroadcastSeatTable, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::BroadcastSeatTable, seattable_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStart, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStart, playerid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStart, roomid_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, playerid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, roomid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, gamestartresult_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, flop_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::GameStartResult, hole_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::Get, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -314,25 +400,31 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Texus::PlayerCreateRsp, reason_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::Texus::PlayerTryJoin)},
-  { 7, -1, sizeof(::Texus::PlayerJoinResult)},
-  { 17, -1, sizeof(::Texus::PlayerTryQuitRoom)},
-  { 24, -1, sizeof(::Texus::PlayerQuitRoomResult)},
-  { 34, -1, sizeof(::Texus::SeatTableItem)},
-  { 41, -1, sizeof(::Texus::BroadcastSeatTable)},
-  { 47, -1, sizeof(::Texus::Get)},
-  { 54, -1, sizeof(::Texus::PlayerSyncData)},
-  { 60, -1, sizeof(::Texus::PlayerCreateReq)},
-  { 68, -1, sizeof(::Texus::PlayerCreateRsp)},
+  { 0, -1, sizeof(::Texus::SeatTableItem)},
+  { 7, -1, sizeof(::Texus::Card)},
+  { 14, -1, sizeof(::Texus::PlayerTryJoin)},
+  { 21, -1, sizeof(::Texus::PlayerJoinResult)},
+  { 31, -1, sizeof(::Texus::PlayerTryQuitRoom)},
+  { 38, -1, sizeof(::Texus::PlayerQuitRoomResult)},
+  { 48, -1, sizeof(::Texus::BroadcastSeatTable)},
+  { 54, -1, sizeof(::Texus::GameStart)},
+  { 61, -1, sizeof(::Texus::GameStartResult)},
+  { 71, -1, sizeof(::Texus::Get)},
+  { 78, -1, sizeof(::Texus::PlayerSyncData)},
+  { 84, -1, sizeof(::Texus::PlayerCreateReq)},
+  { 92, -1, sizeof(::Texus::PlayerCreateRsp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_SeatTableItem_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_Card_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerTryJoin_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerJoinResult_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerTryQuitRoom_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerQuitRoomResult_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_SeatTableItem_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_BroadcastSeatTable_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_GameStart_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_GameStartResult_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_Get_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerSyncData_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::Texus::_PlayerCreateReq_default_instance_),
@@ -354,62 +446,75 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 10);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\020texus_room.proto\022\005Texus\"1\n\rPlayerTryJo"
-      "in\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\200\001\n"
-      "\020PlayerJoinResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006R"
-      "oomID\030\002 \001(\005\022\022\n\nJoinResult\030\003 \001(\005\022\'\n\tSeatT"
-      "able\030\004 \003(\0132\024.Texus.SeatTableItem\022\r\n\005mone"
-      "y\030\005 \001(\005\"5\n\021PlayerTryQuitRoom\022\020\n\010PlayerID"
-      "\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\204\001\n\024PlayerQuitRoo"
-      "mResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001("
-      "\005\022\022\n\nQuitResult\030\003 \001(\005\022\'\n\tSeatTable\030\004 \003(\013"
-      "2\024.Texus.SeatTableItem\022\r\n\005money\030\005 \001(\005\"5\n"
-      "\rSeatTableItem\022\020\n\010PlayerId\030\001 \001(\t\022\022\n\nSeat"
-      "Number\030\002 \001(\005\"=\n\022BroadcastSeatTable\022\'\n\tSe"
-      "atTable\030\001 \003(\0132\024.Texus.SeatTableItem\")\n\003G"
-      "et\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010Password\030\002 \001(\t\"\036"
-      "\n\016PlayerSyncData\022\014\n\004Name\030\001 \001(\014\"C\n\017Player"
-      "CreateReq\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010Password\030"
-      "\002 \001(\t\022\014\n\004Name\030\003 \001(\014\"Q\n\017PlayerCreateRsp\022\016"
-      "\n\006Result\030\001 \001(\005\022\020\n\010PlayerID\030\002 \001(\t\022\014\n\004Name"
-      "\030\003 \001(\014\022\016\n\006Reason\030\004 \001(\t*\351\001\n\nCLIENT_CMD\022\026\n"
-      "\022CLIENT_CMD_INVALID\020\000\022\026\n\020CLIENT_CMD_BEGI"
-      "N\020\260\352\001\022\021\n\013CLIENT_PING\020\261\352\001\022\026\n\020CLIENT_LOGIN"
-      "_REQ\020\264\352\001\022\027\n\021CLIENT_CREATE_REQ\020\265\352\001\022\031\n\023CLI"
-      "ENT_ANNOUNCE_REQ\020\266\352\001\022\032\n\024CLIENT_JOIN_ROOM"
-      "_REQ\020\267\352\001\022\032\n\024CLIENT_QUIT_ROOM_REQ\020\270\352\001\022\024\n\016"
-      "CLIENT_CMD_END\020\350\201\002*\227\002\n\nSERVER_CMD\022\026\n\022SER"
-      "VER_CMD_INVALID\020\000\022\025\n\020SERVER_CMD_BEGIN\020\350\007"
-      "\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SERVER_LOGIN_RSP\020\354"
-      "\007\022\026\n\021SERVER_CREATE_RSP\020\355\007\022\030\n\023SERVER_ANNO"
-      "UNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN_RSP\020\357\007\022"
-      "\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SERVER_BROA"
-      "DCAST_SEATTABLE\020\361\007\022\023\n\016GM_OPERATE_RSP\020\314\010\022"
-      "\023\n\016SERVER_CMD_END\020\220N*\303\004\n\021PROTO_RESULT_CO"
-      "DE\022\032\n\026SERVER_LOGIN_RESULT_OK\020\000\022\034\n\030SERVER"
-      "_LOGIN_RESULT_FAIL\020\001\0224\n\'SERVER_LOGIN_RES"
-      "ULT_FAIL_NO_SUCH_PLAYER\020\376\377\377\377\377\377\377\377\377\001\022,\n(SE"
-      "RVER_LOGIN_RESULT_FAIL_ALREADY_IN_GAME\020\003"
-      "\022\"\n\036SERVER_LOGIN_RESULT_FAIL_WRONG\020\004\022\026\n\022"
-      "JOINROOM_RESULT_OK\020\005\022/\n+JOINROOM_RESULT_"
-      "FAIL_EXISTING_PLAYER_INROOM\020\006\022%\n!JOINROO"
-      "M_RESULT_FAIL_NO_SUCH_ROOM\020\007\022%\n!JOINROOM"
-      "_RESULT_FAIL_BAD_PLAYERID\020\010\022-\n)JOINROOM_"
-      "RESULT_FAIL_PLAYER_AMOUNT_EXCEED\020\t\022(\n$JO"
-      "INROOM_RESULT_FAIL_NO_ENOUGH_MONEY\020\n\022\026\n\022"
-      "QUITROOM_RESULT_OK\020\017\022\030\n\024QUITROOM_RESULT_"
-      "FAIL\020\020\022%\n!QUITROOM_RESULT_FAIL_NO_SUCH_R"
-      "OOM\020\021\022#\n\037QUITROOM_RESULT_FAIL_INVALID_ID"
-      "\020\022b\006proto3"
+      "\n\020texus_room.proto\022\005Texus\"5\n\rSeatTableIt"
+      "em\022\020\n\010PlayerID\030\001 \001(\t\022\022\n\nSeatNumber\030\002 \001(\005"
+      "\"\"\n\004Card\022\014\n\004suit\030\001 \001(\005\022\014\n\004rank\030\002 \001(\005\"1\n\r"
+      "PlayerTryJoin\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomI"
+      "D\030\002 \001(\005\"\200\001\n\020PlayerJoinResult\022\020\n\010PlayerID"
+      "\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\022\022\n\nJoinResult\030\003 \001"
+      "(\005\022\'\n\tSeatTable\030\004 \003(\0132\024.Texus.SeatTableI"
+      "tem\022\r\n\005money\030\005 \001(\005\"5\n\021PlayerTryQuitRoom\022"
+      "\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\204\001\n\024Pl"
+      "ayerQuitRoomResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006"
+      "RoomID\030\002 \001(\005\022\022\n\nQuitResult\030\003 \001(\005\022\'\n\tSeat"
+      "Table\030\004 \003(\0132\024.Texus.SeatTableItem\022\r\n\005mon"
+      "ey\030\005 \001(\005\"=\n\022BroadcastSeatTable\022\'\n\tSeatTa"
+      "ble\030\001 \003(\0132\024.Texus.SeatTableItem\"-\n\tGameS"
+      "tart\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006RoomID\030\002 \001(\005\"\202"
+      "\001\n\017GameStartResult\022\020\n\010PlayerID\030\001 \001(\t\022\016\n\006"
+      "RoomID\030\002 \001(\005\022\027\n\017GameStartResult\030\003 \001(\005\022\031\n"
+      "\004flop\030\004 \003(\0132\013.Texus.Card\022\031\n\004hole\030\005 \003(\0132\013"
+      ".Texus.Card\")\n\003Get\022\020\n\010PlayerID\030\001 \001(\t\022\020\n\010"
+      "Password\030\002 \001(\t\"\036\n\016PlayerSyncData\022\014\n\004Name"
+      "\030\001 \001(\014\"C\n\017PlayerCreateReq\022\020\n\010PlayerID\030\001 "
+      "\001(\t\022\020\n\010Password\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\"Q\n\017P"
+      "layerCreateRsp\022\016\n\006Result\030\001 \001(\005\022\020\n\010Player"
+      "ID\030\002 \001(\t\022\014\n\004Name\030\003 \001(\014\022\016\n\006Reason\030\004 \001(\t*\205"
+      "\002\n\nCLIENT_CMD\022\026\n\022CLIENT_CMD_INVALID\020\000\022\026\n"
+      "\020CLIENT_CMD_BEGIN\020\260\352\001\022\021\n\013CLIENT_PING\020\261\352\001"
+      "\022\026\n\020CLIENT_LOGIN_REQ\020\264\352\001\022\027\n\021CLIENT_CREAT"
+      "E_REQ\020\265\352\001\022\031\n\023CLIENT_ANNOUNCE_REQ\020\266\352\001\022\032\n\024"
+      "CLIENT_JOIN_ROOM_REQ\020\267\352\001\022\032\n\024CLIENT_QUIT_"
+      "ROOM_REQ\020\270\352\001\022\032\n\024CLIENT_GAMESTART_REQ\020\271\352\001"
+      "\022\024\n\016CLIENT_CMD_END\020\350\201\002*\323\002\n\nSERVER_CMD\022\026\n"
+      "\022SERVER_CMD_INVALID\020\000\022\025\n\020SERVER_CMD_BEGI"
+      "N\020\350\007\022\020\n\013SERVER_PONG\020\351\007\022\025\n\020SERVER_LOGIN_R"
+      "SP\020\354\007\022\026\n\021SERVER_CREATE_RSP\020\355\007\022\030\n\023SERVER_"
+      "ANNOUNCE_RSP\020\356\007\022\032\n\025SERVER_JUDGE_JOIN_RSP"
+      "\020\357\007\022\030\n\023SERVER_QUITROOM_RSP\020\360\007\022\037\n\032SERVER_"
+      "BROADCAST_SEATTABLE\020\361\007\022\031\n\024SERVER_GAMESTA"
+      "RT_RSP\020\362\007\022\037\n\032SERVER_BROADCAST_GAMESTART\020"
+      "\363\007\022\023\n\016GM_OPERATE_RSP\020\314\010\022\023\n\016SERVER_CMD_EN"
+      "D\020\220N*\224\006\n\021PROTO_RESULT_CODE\022\032\n\026SERVER_LOG"
+      "IN_RESULT_OK\020\000\022\034\n\030SERVER_LOGIN_RESULT_FA"
+      "IL\020\001\0224\n\'SERVER_LOGIN_RESULT_FAIL_NO_SUCH"
+      "_PLAYER\020\376\377\377\377\377\377\377\377\377\001\022,\n(SERVER_LOGIN_RESUL"
+      "T_FAIL_ALREADY_IN_GAME\020\003\022\"\n\036SERVER_LOGIN"
+      "_RESULT_FAIL_WRONG\020\004\022\026\n\022JOINROOM_RESULT_"
+      "OK\020\005\022/\n+JOINROOM_RESULT_FAIL_EXISTING_PL"
+      "AYER_INROOM\020\006\022%\n!JOINROOM_RESULT_FAIL_NO"
+      "_SUCH_ROOM\020\007\022%\n!JOINROOM_RESULT_FAIL_BAD"
+      "_PLAYERID\020\010\022-\n)JOINROOM_RESULT_FAIL_PLAY"
+      "ER_AMOUNT_EXCEED\020\t\022(\n$JOINROOM_RESULT_FA"
+      "IL_NO_ENOUGH_MONEY\020\n\022-\n)JOINROOM_RESULT_"
+      "FAIL_ROOM_ALREADY_IN_GAME\020\013\022\026\n\022QUITROOM_"
+      "RESULT_OK\020\017\022\030\n\024QUITROOM_RESULT_FAIL\020\020\022%\n"
+      "!QUITROOM_RESULT_FAIL_NO_SUCH_ROOM\020\021\022#\n\037"
+      "QUITROOM_RESULT_FAIL_INVALID_ID\020\022\022\020\n\014GAM"
+      "ESTART_OK\020\023\022\037\n\033GAMESTART_FAIL_NO_SUCH_RO"
+      "OM\020\024\022!\n\035GAMESTART_FAIL_NOT_ROOM_OWNER\020\025\022"
+      "!\n\035GAMESTART_FAIL_NO_ENOUGH_USER\020\026\022\'\n#GA"
+      "MESTART_FAIL_ROOM_ALREADY_IN_GAME\020\027b\006pro"
+      "to3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1850);
+      descriptor, 2363);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "texus_room.proto", &protobuf_RegisterTypes);
 }
@@ -440,6 +545,7 @@ bool CLIENT_CMD_IsValid(int value) {
     case 30006:
     case 30007:
     case 30008:
+    case 30009:
     case 33000:
       return true;
     default:
@@ -462,6 +568,8 @@ bool SERVER_CMD_IsValid(int value) {
     case 1007:
     case 1008:
     case 1009:
+    case 1010:
+    case 1011:
     case 1100:
     case 10000:
       return true;
@@ -487,14 +595,566 @@ bool PROTO_RESULT_CODE_IsValid(int value) {
     case 8:
     case 9:
     case 10:
+    case 11:
     case 15:
     case 16:
     case 17:
     case 18:
+    case 19:
+    case 20:
+    case 21:
+    case 22:
+    case 23:
       return true;
     default:
       return false;
   }
+}
+
+
+// ===================================================================
+
+void SeatTableItem::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SeatTableItem::kPlayerIDFieldNumber;
+const int SeatTableItem::kSeatNumberFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SeatTableItem::SeatTableItem()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Texus.SeatTableItem)
+}
+SeatTableItem::SeatTableItem(const SeatTableItem& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.playerid().size() > 0) {
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  seatnumber_ = from.seatnumber_;
+  // @@protoc_insertion_point(copy_constructor:Texus.SeatTableItem)
+}
+
+void SeatTableItem::SharedCtor() {
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  seatnumber_ = 0;
+}
+
+SeatTableItem::~SeatTableItem() {
+  // @@protoc_insertion_point(destructor:Texus.SeatTableItem)
+  SharedDtor();
+}
+
+void SeatTableItem::SharedDtor() {
+  playerid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void SeatTableItem::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* SeatTableItem::descriptor() {
+  ::protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SeatTableItem& SeatTableItem::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base);
+  return *internal_default_instance();
+}
+
+
+void SeatTableItem::Clear() {
+// @@protoc_insertion_point(message_clear_start:Texus.SeatTableItem)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  seatnumber_ = 0;
+  _internal_metadata_.Clear();
+}
+
+bool SeatTableItem::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Texus.SeatTableItem)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string PlayerID = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_playerid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->playerid().data(), static_cast<int>(this->playerid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "Texus.SeatTableItem.PlayerID"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 SeatNumber = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &seatnumber_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Texus.SeatTableItem)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Texus.SeatTableItem)
+  return false;
+#undef DO_
+}
+
+void SeatTableItem::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Texus.SeatTableItem)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.SeatTableItem.PlayerID");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->playerid(), output);
+  }
+
+  // int32 SeatNumber = 2;
+  if (this->seatnumber() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->seatnumber(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Texus.SeatTableItem)
+}
+
+::google::protobuf::uint8* SeatTableItem::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:Texus.SeatTableItem)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.SeatTableItem.PlayerID");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->playerid(), target);
+  }
+
+  // int32 SeatNumber = 2;
+  if (this->seatnumber() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->seatnumber(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Texus.SeatTableItem)
+  return target;
+}
+
+size_t SeatTableItem::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Texus.SeatTableItem)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->playerid());
+  }
+
+  // int32 SeatNumber = 2;
+  if (this->seatnumber() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->seatnumber());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SeatTableItem::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Texus.SeatTableItem)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SeatTableItem* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SeatTableItem>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Texus.SeatTableItem)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Texus.SeatTableItem)
+    MergeFrom(*source);
+  }
+}
+
+void SeatTableItem::MergeFrom(const SeatTableItem& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Texus.SeatTableItem)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.playerid().size() > 0) {
+
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  if (from.seatnumber() != 0) {
+    set_seatnumber(from.seatnumber());
+  }
+}
+
+void SeatTableItem::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Texus.SeatTableItem)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SeatTableItem::CopyFrom(const SeatTableItem& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Texus.SeatTableItem)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SeatTableItem::IsInitialized() const {
+  return true;
+}
+
+void SeatTableItem::Swap(SeatTableItem* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SeatTableItem::InternalSwap(SeatTableItem* other) {
+  using std::swap;
+  playerid_.Swap(&other->playerid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(seatnumber_, other->seatnumber_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata SeatTableItem::GetMetadata() const {
+  protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void Card::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Card::kSuitFieldNumber;
+const int Card::kRankFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Card::Card()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_texus_5froom_2eproto::scc_info_Card.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Texus.Card)
+}
+Card::Card(const Card& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&suit_, &from.suit_,
+    static_cast<size_t>(reinterpret_cast<char*>(&rank_) -
+    reinterpret_cast<char*>(&suit_)) + sizeof(rank_));
+  // @@protoc_insertion_point(copy_constructor:Texus.Card)
+}
+
+void Card::SharedCtor() {
+  ::memset(&suit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&rank_) -
+      reinterpret_cast<char*>(&suit_)) + sizeof(rank_));
+}
+
+Card::~Card() {
+  // @@protoc_insertion_point(destructor:Texus.Card)
+  SharedDtor();
+}
+
+void Card::SharedDtor() {
+}
+
+void Card::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Card::descriptor() {
+  ::protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Card& Card::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_texus_5froom_2eproto::scc_info_Card.base);
+  return *internal_default_instance();
+}
+
+
+void Card::Clear() {
+// @@protoc_insertion_point(message_clear_start:Texus.Card)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&suit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&rank_) -
+      reinterpret_cast<char*>(&suit_)) + sizeof(rank_));
+  _internal_metadata_.Clear();
+}
+
+bool Card::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Texus.Card)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 suit = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &suit_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 rank = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &rank_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Texus.Card)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Texus.Card)
+  return false;
+#undef DO_
+}
+
+void Card::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Texus.Card)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 suit = 1;
+  if (this->suit() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->suit(), output);
+  }
+
+  // int32 rank = 2;
+  if (this->rank() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->rank(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Texus.Card)
+}
+
+::google::protobuf::uint8* Card::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:Texus.Card)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 suit = 1;
+  if (this->suit() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->suit(), target);
+  }
+
+  // int32 rank = 2;
+  if (this->rank() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->rank(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Texus.Card)
+  return target;
+}
+
+size_t Card::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Texus.Card)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // int32 suit = 1;
+  if (this->suit() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->suit());
+  }
+
+  // int32 rank = 2;
+  if (this->rank() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->rank());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Card::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Texus.Card)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Card* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Card>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Texus.Card)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Texus.Card)
+    MergeFrom(*source);
+  }
+}
+
+void Card::MergeFrom(const Card& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Texus.Card)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.suit() != 0) {
+    set_suit(from.suit());
+  }
+  if (from.rank() != 0) {
+    set_rank(from.rank());
+  }
+}
+
+void Card::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Texus.Card)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Card::CopyFrom(const Card& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Texus.Card)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Card::IsInitialized() const {
+  return true;
+}
+
+void Card::Swap(Card* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Card::InternalSwap(Card* other) {
+  using std::swap;
+  swap(suit_, other->suit_);
+  swap(rank_, other->rank_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Card::GetMetadata() const {
+  protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
 }
 
 
@@ -1870,287 +2530,6 @@ void PlayerQuitRoomResult::InternalSwap(PlayerQuitRoomResult* other) {
 
 // ===================================================================
 
-void SeatTableItem::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SeatTableItem::kPlayerIdFieldNumber;
-const int SeatTableItem::kSeatNumberFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SeatTableItem::SeatTableItem()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Texus.SeatTableItem)
-}
-SeatTableItem::SeatTableItem(const SeatTableItem& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.playerid().size() > 0) {
-    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
-  }
-  seatnumber_ = from.seatnumber_;
-  // @@protoc_insertion_point(copy_constructor:Texus.SeatTableItem)
-}
-
-void SeatTableItem::SharedCtor() {
-  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  seatnumber_ = 0;
-}
-
-SeatTableItem::~SeatTableItem() {
-  // @@protoc_insertion_point(destructor:Texus.SeatTableItem)
-  SharedDtor();
-}
-
-void SeatTableItem::SharedDtor() {
-  playerid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void SeatTableItem::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SeatTableItem::descriptor() {
-  ::protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const SeatTableItem& SeatTableItem::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_texus_5froom_2eproto::scc_info_SeatTableItem.base);
-  return *internal_default_instance();
-}
-
-
-void SeatTableItem::Clear() {
-// @@protoc_insertion_point(message_clear_start:Texus.SeatTableItem)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  seatnumber_ = 0;
-  _internal_metadata_.Clear();
-}
-
-bool SeatTableItem::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Texus.SeatTableItem)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string PlayerId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_playerid()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->playerid().data(), static_cast<int>(this->playerid().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "Texus.SeatTableItem.PlayerId"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int32 SeatNumber = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &seatnumber_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Texus.SeatTableItem)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Texus.SeatTableItem)
-  return false;
-#undef DO_
-}
-
-void SeatTableItem::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Texus.SeatTableItem)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string PlayerId = 1;
-  if (this->playerid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->playerid().data(), static_cast<int>(this->playerid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Texus.SeatTableItem.PlayerId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->playerid(), output);
-  }
-
-  // int32 SeatNumber = 2;
-  if (this->seatnumber() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->seatnumber(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Texus.SeatTableItem)
-}
-
-::google::protobuf::uint8* SeatTableItem::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:Texus.SeatTableItem)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string PlayerId = 1;
-  if (this->playerid().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->playerid().data(), static_cast<int>(this->playerid().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Texus.SeatTableItem.PlayerId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->playerid(), target);
-  }
-
-  // int32 SeatNumber = 2;
-  if (this->seatnumber() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->seatnumber(), target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Texus.SeatTableItem)
-  return target;
-}
-
-size_t SeatTableItem::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Texus.SeatTableItem)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // string PlayerId = 1;
-  if (this->playerid().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->playerid());
-  }
-
-  // int32 SeatNumber = 2;
-  if (this->seatnumber() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->seatnumber());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SeatTableItem::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Texus.SeatTableItem)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SeatTableItem* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SeatTableItem>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Texus.SeatTableItem)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Texus.SeatTableItem)
-    MergeFrom(*source);
-  }
-}
-
-void SeatTableItem::MergeFrom(const SeatTableItem& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Texus.SeatTableItem)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.playerid().size() > 0) {
-
-    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
-  }
-  if (from.seatnumber() != 0) {
-    set_seatnumber(from.seatnumber());
-  }
-}
-
-void SeatTableItem::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Texus.SeatTableItem)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void SeatTableItem::CopyFrom(const SeatTableItem& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Texus.SeatTableItem)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SeatTableItem::IsInitialized() const {
-  return true;
-}
-
-void SeatTableItem::Swap(SeatTableItem* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void SeatTableItem::InternalSwap(SeatTableItem* other) {
-  using std::swap;
-  playerid_.Swap(&other->playerid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(seatnumber_, other->seatnumber_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata SeatTableItem::GetMetadata() const {
-  protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void BroadcastSeatTable::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -2373,6 +2752,700 @@ void BroadcastSeatTable::InternalSwap(BroadcastSeatTable* other) {
 }
 
 ::google::protobuf::Metadata BroadcastSeatTable::GetMetadata() const {
+  protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void GameStart::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GameStart::kPlayerIDFieldNumber;
+const int GameStart::kRoomIDFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GameStart::GameStart()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_texus_5froom_2eproto::scc_info_GameStart.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Texus.GameStart)
+}
+GameStart::GameStart(const GameStart& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.playerid().size() > 0) {
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  roomid_ = from.roomid_;
+  // @@protoc_insertion_point(copy_constructor:Texus.GameStart)
+}
+
+void GameStart::SharedCtor() {
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  roomid_ = 0;
+}
+
+GameStart::~GameStart() {
+  // @@protoc_insertion_point(destructor:Texus.GameStart)
+  SharedDtor();
+}
+
+void GameStart::SharedDtor() {
+  playerid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void GameStart::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* GameStart::descriptor() {
+  ::protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const GameStart& GameStart::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_texus_5froom_2eproto::scc_info_GameStart.base);
+  return *internal_default_instance();
+}
+
+
+void GameStart::Clear() {
+// @@protoc_insertion_point(message_clear_start:Texus.GameStart)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  roomid_ = 0;
+  _internal_metadata_.Clear();
+}
+
+bool GameStart::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Texus.GameStart)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string PlayerID = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_playerid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->playerid().data(), static_cast<int>(this->playerid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "Texus.GameStart.PlayerID"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 RoomID = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &roomid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Texus.GameStart)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Texus.GameStart)
+  return false;
+#undef DO_
+}
+
+void GameStart::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Texus.GameStart)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.GameStart.PlayerID");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->playerid(), output);
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->roomid(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Texus.GameStart)
+}
+
+::google::protobuf::uint8* GameStart::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:Texus.GameStart)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.GameStart.PlayerID");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->playerid(), target);
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->roomid(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Texus.GameStart)
+  return target;
+}
+
+size_t GameStart::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Texus.GameStart)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->playerid());
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->roomid());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GameStart::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Texus.GameStart)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GameStart* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const GameStart>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Texus.GameStart)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Texus.GameStart)
+    MergeFrom(*source);
+  }
+}
+
+void GameStart::MergeFrom(const GameStart& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Texus.GameStart)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.playerid().size() > 0) {
+
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  if (from.roomid() != 0) {
+    set_roomid(from.roomid());
+  }
+}
+
+void GameStart::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Texus.GameStart)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GameStart::CopyFrom(const GameStart& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Texus.GameStart)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GameStart::IsInitialized() const {
+  return true;
+}
+
+void GameStart::Swap(GameStart* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GameStart::InternalSwap(GameStart* other) {
+  using std::swap;
+  playerid_.Swap(&other->playerid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(roomid_, other->roomid_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata GameStart::GetMetadata() const {
+  protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void GameStartResult::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int GameStartResult::kPlayerIDFieldNumber;
+const int GameStartResult::kRoomIDFieldNumber;
+const int GameStartResult::kGameStartResultFieldNumber;
+const int GameStartResult::kFlopFieldNumber;
+const int GameStartResult::kHoleFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+GameStartResult::GameStartResult()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_texus_5froom_2eproto::scc_info_GameStartResult.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:Texus.GameStartResult)
+}
+GameStartResult::GameStartResult(const GameStartResult& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      flop_(from.flop_),
+      hole_(from.hole_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.playerid().size() > 0) {
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  ::memcpy(&roomid_, &from.roomid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&gamestartresult_) -
+    reinterpret_cast<char*>(&roomid_)) + sizeof(gamestartresult_));
+  // @@protoc_insertion_point(copy_constructor:Texus.GameStartResult)
+}
+
+void GameStartResult::SharedCtor() {
+  playerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&roomid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&gamestartresult_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(gamestartresult_));
+}
+
+GameStartResult::~GameStartResult() {
+  // @@protoc_insertion_point(destructor:Texus.GameStartResult)
+  SharedDtor();
+}
+
+void GameStartResult::SharedDtor() {
+  playerid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void GameStartResult::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* GameStartResult::descriptor() {
+  ::protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const GameStartResult& GameStartResult::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_texus_5froom_2eproto::scc_info_GameStartResult.base);
+  return *internal_default_instance();
+}
+
+
+void GameStartResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:Texus.GameStartResult)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  flop_.Clear();
+  hole_.Clear();
+  playerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&roomid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&gamestartresult_) -
+      reinterpret_cast<char*>(&roomid_)) + sizeof(gamestartresult_));
+  _internal_metadata_.Clear();
+}
+
+bool GameStartResult::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:Texus.GameStartResult)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string PlayerID = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_playerid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->playerid().data(), static_cast<int>(this->playerid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "Texus.GameStartResult.PlayerID"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 RoomID = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &roomid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 GameStartResult = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &gamestartresult_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .Texus.Card flop = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_flop()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .Texus.Card hole = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_hole()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:Texus.GameStartResult)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:Texus.GameStartResult)
+  return false;
+#undef DO_
+}
+
+void GameStartResult::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:Texus.GameStartResult)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.GameStartResult.PlayerID");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->playerid(), output);
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->roomid(), output);
+  }
+
+  // int32 GameStartResult = 3;
+  if (this->gamestartresult() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->gamestartresult(), output);
+  }
+
+  // repeated .Texus.Card flop = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->flop_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4,
+      this->flop(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .Texus.Card hole = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->hole_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5,
+      this->hole(static_cast<int>(i)),
+      output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:Texus.GameStartResult)
+}
+
+::google::protobuf::uint8* GameStartResult::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:Texus.GameStartResult)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->playerid().data(), static_cast<int>(this->playerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "Texus.GameStartResult.PlayerID");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->playerid(), target);
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->roomid(), target);
+  }
+
+  // int32 GameStartResult = 3;
+  if (this->gamestartresult() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->gamestartresult(), target);
+  }
+
+  // repeated .Texus.Card flop = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->flop_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->flop(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .Texus.Card hole = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->hole_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, this->hole(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Texus.GameStartResult)
+  return target;
+}
+
+size_t GameStartResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Texus.GameStartResult)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .Texus.Card flop = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->flop_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->flop(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .Texus.Card hole = 5;
+  {
+    unsigned int count = static_cast<unsigned int>(this->hole_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->hole(static_cast<int>(i)));
+    }
+  }
+
+  // string PlayerID = 1;
+  if (this->playerid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->playerid());
+  }
+
+  // int32 RoomID = 2;
+  if (this->roomid() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->roomid());
+  }
+
+  // int32 GameStartResult = 3;
+  if (this->gamestartresult() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->gamestartresult());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GameStartResult::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:Texus.GameStartResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GameStartResult* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const GameStartResult>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Texus.GameStartResult)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Texus.GameStartResult)
+    MergeFrom(*source);
+  }
+}
+
+void GameStartResult::MergeFrom(const GameStartResult& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:Texus.GameStartResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  flop_.MergeFrom(from.flop_);
+  hole_.MergeFrom(from.hole_);
+  if (from.playerid().size() > 0) {
+
+    playerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.playerid_);
+  }
+  if (from.roomid() != 0) {
+    set_roomid(from.roomid());
+  }
+  if (from.gamestartresult() != 0) {
+    set_gamestartresult(from.gamestartresult());
+  }
+}
+
+void GameStartResult::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:Texus.GameStartResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GameStartResult::CopyFrom(const GameStartResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Texus.GameStartResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GameStartResult::IsInitialized() const {
+  return true;
+}
+
+void GameStartResult::Swap(GameStartResult* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void GameStartResult::InternalSwap(GameStartResult* other) {
+  using std::swap;
+  CastToBase(&flop_)->InternalSwap(CastToBase(&other->flop_));
+  CastToBase(&hole_)->InternalSwap(CastToBase(&other->hole_));
+  playerid_.Swap(&other->playerid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(roomid_, other->roomid_);
+  swap(gamestartresult_, other->gamestartresult_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata GameStartResult::GetMetadata() const {
   protobuf_texus_5froom_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_texus_5froom_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -3643,6 +4716,12 @@ void PlayerCreateRsp::InternalSwap(PlayerCreateRsp* other) {
 }  // namespace Texus
 namespace google {
 namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::SeatTableItem* Arena::CreateMaybeMessage< ::Texus::SeatTableItem >(Arena* arena) {
+  return Arena::CreateInternal< ::Texus::SeatTableItem >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::Card* Arena::CreateMaybeMessage< ::Texus::Card >(Arena* arena) {
+  return Arena::CreateInternal< ::Texus::Card >(arena);
+}
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::PlayerTryJoin* Arena::CreateMaybeMessage< ::Texus::PlayerTryJoin >(Arena* arena) {
   return Arena::CreateInternal< ::Texus::PlayerTryJoin >(arena);
 }
@@ -3655,11 +4734,14 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::PlayerTryQuitRoom* Arena:
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::PlayerQuitRoomResult* Arena::CreateMaybeMessage< ::Texus::PlayerQuitRoomResult >(Arena* arena) {
   return Arena::CreateInternal< ::Texus::PlayerQuitRoomResult >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::SeatTableItem* Arena::CreateMaybeMessage< ::Texus::SeatTableItem >(Arena* arena) {
-  return Arena::CreateInternal< ::Texus::SeatTableItem >(arena);
-}
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::BroadcastSeatTable* Arena::CreateMaybeMessage< ::Texus::BroadcastSeatTable >(Arena* arena) {
   return Arena::CreateInternal< ::Texus::BroadcastSeatTable >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::GameStart* Arena::CreateMaybeMessage< ::Texus::GameStart >(Arena* arena) {
+  return Arena::CreateInternal< ::Texus::GameStart >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::GameStartResult* Arena::CreateMaybeMessage< ::Texus::GameStartResult >(Arena* arena) {
+  return Arena::CreateInternal< ::Texus::GameStartResult >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Texus::Get* Arena::CreateMaybeMessage< ::Texus::Get >(Arena* arena) {
   return Arena::CreateInternal< ::Texus::Get >(arena);

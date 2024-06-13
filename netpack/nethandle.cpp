@@ -212,17 +212,6 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		g_playerMgr.announce_request(client);
 		break;
 	}
-	case CLIENT_BUY_ITEM_REQ:
-	{
-		BuyItemReq req;
-		req.ParseFromArray(pack->data, pack->len);
-		g_playerMgr.buy_item(client, &req);
-		//g_playerMgr.send_backpack_content(client, &req);
-	   /* GetBackPackContentReq req;
-		req.ParseFromArray(pack->data, pack->len);
-		g_playerMgr.send_backpack_content(client, &req);*/
-		break;
-	}
 
 	case Texus::CLIENT_CMD::CLIENT_JOIN_ROOM_REQ:
 	{
@@ -252,6 +241,11 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		}
 		else if (user_join.chip < MONEY_BAR) {
 			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY);
+			joinresult.set_money(user_join.chip);
+			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
+		}
+		else if (g_rooms[room].gameon) {
+			joinresult.set_joinresult(Texus::PROTO_RESULT_CODE::JOINROOM_RESULT_FAIL_ROOM_ALREADY_IN_GAME);
 			joinresult.set_money(user_join.chip);
 			SendPBToClient(user_join.tcp, Texus::SERVER_CMD::SERVER_JUDGE_JOIN_RSP, &joinresult);
 		}
@@ -337,6 +331,57 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_BROADCAST_SEATTABLE, &seattable);
 			}
 		}
+		break;
+	}
+	case Texus::CLIENT_CMD::CLIENT_GAMESTART_REQ: 
+	{
+		Texus::GameStart gsreq;
+		gsreq.ParseFromArray(pack->data, pack->len);
+		cerr << "CLIENT_GAMESTART_REQ " << gsreq.playerid() << " roomid: " << gsreq.roomid() << '\n';
+		
+		auto room = gsreq.roomid();
+		User user_trigger{client,gsreq.playerid() };
+
+		Texus::GameStartResult gsrsp;
+		gsrsp.set_roomid(room);
+
+		if (room >= g_rooms.size()) {
+			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_SUCH_ROOM);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+		}
+		else if (g_rooms[room].users.size() < USER_SIZE_BAR) {
+			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_ENOUGH_USER);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+		}
+		else if (g_rooms[room].users[0] != user_trigger) {
+			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NOT_ROOM_OWNER);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+		}
+		else if (g_rooms[room].gameon) {
+			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_ROOM_ALREADY_IN_GAME);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+		}
+		else {
+			g_rooms[room].reset();
+			for (const auto& user : g_rooms[room].users) {
+				Texus::GameStartResult gsrsp;
+				gsrsp.set_playerid(user.id);
+				gsrsp.set_roomid(room);
+				gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_OK);
+				for (int i = 0; i < 2; ++i) {
+					auto newhole=gsrsp.add_hole();
+					newhole->set_suit(user.hole[i].s);
+					newhole->set_rank(user.hole[i].r);
+				}
+				for (int i = 0; i < 3; ++i) {
+					auto newflop = gsrsp.add_flop();
+					newflop->set_suit(g_rooms[room].flop[i].s);
+					newflop->set_rank(g_rooms[room].flop[i].r);
+				}
+				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_BROADCAST_GAMESTART, &gsrsp);
+			}
+		}
+		
 		break;
 	}
 	default:

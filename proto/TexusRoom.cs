@@ -24,57 +24,71 @@ namespace Texus {
     static TexusRoomReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChB0ZXh1c19yb29tLnByb3RvEgVUZXh1cyIxCg1QbGF5ZXJUcnlKb2luEhAK",
-            "CFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBSKAAQoQUGxheWVySm9p",
-            "blJlc3VsdBIQCghQbGF5ZXJJRBgBIAEoCRIOCgZSb29tSUQYAiABKAUSEgoK",
-            "Sm9pblJlc3VsdBgDIAEoBRInCglTZWF0VGFibGUYBCADKAsyFC5UZXh1cy5T",
-            "ZWF0VGFibGVJdGVtEg0KBW1vbmV5GAUgASgFIjUKEVBsYXllclRyeVF1aXRS",
-            "b29tEhAKCFBsYXllcklEGAEgASgJEg4KBlJvb21JRBgCIAEoBSKEAQoUUGxh",
-            "eWVyUXVpdFJvb21SZXN1bHQSEAoIUGxheWVySUQYASABKAkSDgoGUm9vbUlE",
-            "GAIgASgFEhIKClF1aXRSZXN1bHQYAyABKAUSJwoJU2VhdFRhYmxlGAQgAygL",
-            "MhQuVGV4dXMuU2VhdFRhYmxlSXRlbRINCgVtb25leRgFIAEoBSI1Cg1TZWF0",
-            "VGFibGVJdGVtEhAKCFBsYXllcklkGAEgASgJEhIKClNlYXROdW1iZXIYAiAB",
-            "KAUiPQoSQnJvYWRjYXN0U2VhdFRhYmxlEicKCVNlYXRUYWJsZRgBIAMoCzIU",
-            "LlRleHVzLlNlYXRUYWJsZUl0ZW0iKQoDR2V0EhAKCFBsYXllcklEGAEgASgJ",
-            "EhAKCFBhc3N3b3JkGAIgASgJIh4KDlBsYXllclN5bmNEYXRhEgwKBE5hbWUY",
-            "ASABKAwiQwoPUGxheWVyQ3JlYXRlUmVxEhAKCFBsYXllcklEGAEgASgJEhAK",
-            "CFBhc3N3b3JkGAIgASgJEgwKBE5hbWUYAyABKAwiUQoPUGxheWVyQ3JlYXRl",
-            "UnNwEg4KBlJlc3VsdBgBIAEoBRIQCghQbGF5ZXJJRBgCIAEoCRIMCgROYW1l",
-            "GAMgASgMEg4KBlJlYXNvbhgEIAEoCSrpAQoKQ0xJRU5UX0NNRBIWChJDTElF",
-            "TlRfQ01EX0lOVkFMSUQQABIWChBDTElFTlRfQ01EX0JFR0lOELDqARIRCgtD",
-            "TElFTlRfUElORxCx6gESFgoQQ0xJRU5UX0xPR0lOX1JFURC06gESFwoRQ0xJ",
-            "RU5UX0NSRUFURV9SRVEQteoBEhkKE0NMSUVOVF9BTk5PVU5DRV9SRVEQtuoB",
-            "EhoKFENMSUVOVF9KT0lOX1JPT01fUkVRELfqARIaChRDTElFTlRfUVVJVF9S",
-            "T09NX1JFURC46gESFAoOQ0xJRU5UX0NNRF9FTkQQ6IECKpcCCgpTRVJWRVJf",
-            "Q01EEhYKElNFUlZFUl9DTURfSU5WQUxJRBAAEhUKEFNFUlZFUl9DTURfQkVH",
-            "SU4Q6AcSEAoLU0VSVkVSX1BPTkcQ6QcSFQoQU0VSVkVSX0xPR0lOX1JTUBDs",
-            "BxIWChFTRVJWRVJfQ1JFQVRFX1JTUBDtBxIYChNTRVJWRVJfQU5OT1VOQ0Vf",
-            "UlNQEO4HEhoKFVNFUlZFUl9KVURHRV9KT0lOX1JTUBDvBxIYChNTRVJWRVJf",
-            "UVVJVFJPT01fUlNQEPAHEh8KGlNFUlZFUl9CUk9BRENBU1RfU0VBVFRBQkxF",
-            "EPEHEhMKDkdNX09QRVJBVEVfUlNQEMwIEhMKDlNFUlZFUl9DTURfRU5EEJBO",
-            "KsMEChFQUk9UT19SRVNVTFRfQ09ERRIaChZTRVJWRVJfTE9HSU5fUkVTVUxU",
-            "X09LEAASHAoYU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlMEAESNAonU0VSVkVS",
-            "X0xPR0lOX1JFU1VMVF9GQUlMX05PX1NVQ0hfUExBWUVSEP7//////////wES",
-            "LAooU0VSVkVSX0xPR0lOX1JFU1VMVF9GQUlMX0FMUkVBRFlfSU5fR0FNRRAD",
-            "EiIKHlNFUlZFUl9MT0dJTl9SRVNVTFRfRkFJTF9XUk9ORxAEEhYKEkpPSU5S",
-            "T09NX1JFU1VMVF9PSxAFEi8KK0pPSU5ST09NX1JFU1VMVF9GQUlMX0VYSVNU",
-            "SU5HX1BMQVlFUl9JTlJPT00QBhIlCiFKT0lOUk9PTV9SRVNVTFRfRkFJTF9O",
-            "T19TVUNIX1JPT00QBxIlCiFKT0lOUk9PTV9SRVNVTFRfRkFJTF9CQURfUExB",
-            "WUVSSUQQCBItCilKT0lOUk9PTV9SRVNVTFRfRkFJTF9QTEFZRVJfQU1PVU5U",
-            "X0VYQ0VFRBAJEigKJEpPSU5ST09NX1JFU1VMVF9GQUlMX05PX0VOT1VHSF9N",
-            "T05FWRAKEhYKElFVSVRST09NX1JFU1VMVF9PSxAPEhgKFFFVSVRST09NX1JF",
-            "U1VMVF9GQUlMEBASJQohUVVJVFJPT01fUkVTVUxUX0ZBSUxfTk9fU1VDSF9S",
-            "T09NEBESIwofUVVJVFJPT01fUkVTVUxUX0ZBSUxfSU5WQUxJRF9JRBASYgZw",
-            "cm90bzM="));
+            "ChB0ZXh1c19yb29tLnByb3RvEgVUZXh1cyI1Cg1TZWF0VGFibGVJdGVtEhAK",
+            "CFBsYXllcklEGAEgASgJEhIKClNlYXROdW1iZXIYAiABKAUiIgoEQ2FyZBIM",
+            "CgRzdWl0GAEgASgFEgwKBHJhbmsYAiABKAUiMQoNUGxheWVyVHJ5Sm9pbhIQ",
+            "CghQbGF5ZXJJRBgBIAEoCRIOCgZSb29tSUQYAiABKAUigAEKEFBsYXllckpv",
+            "aW5SZXN1bHQSEAoIUGxheWVySUQYASABKAkSDgoGUm9vbUlEGAIgASgFEhIK",
+            "CkpvaW5SZXN1bHQYAyABKAUSJwoJU2VhdFRhYmxlGAQgAygLMhQuVGV4dXMu",
+            "U2VhdFRhYmxlSXRlbRINCgVtb25leRgFIAEoBSI1ChFQbGF5ZXJUcnlRdWl0",
+            "Um9vbRIQCghQbGF5ZXJJRBgBIAEoCRIOCgZSb29tSUQYAiABKAUihAEKFFBs",
+            "YXllclF1aXRSb29tUmVzdWx0EhAKCFBsYXllcklEGAEgASgJEg4KBlJvb21J",
+            "RBgCIAEoBRISCgpRdWl0UmVzdWx0GAMgASgFEicKCVNlYXRUYWJsZRgEIAMo",
+            "CzIULlRleHVzLlNlYXRUYWJsZUl0ZW0SDQoFbW9uZXkYBSABKAUiPQoSQnJv",
+            "YWRjYXN0U2VhdFRhYmxlEicKCVNlYXRUYWJsZRgBIAMoCzIULlRleHVzLlNl",
+            "YXRUYWJsZUl0ZW0iLQoJR2FtZVN0YXJ0EhAKCFBsYXllcklEGAEgASgJEg4K",
+            "BlJvb21JRBgCIAEoBSKCAQoPR2FtZVN0YXJ0UmVzdWx0EhAKCFBsYXllcklE",
+            "GAEgASgJEg4KBlJvb21JRBgCIAEoBRIXCg9HYW1lU3RhcnRSZXN1bHQYAyAB",
+            "KAUSGQoEZmxvcBgEIAMoCzILLlRleHVzLkNhcmQSGQoEaG9sZRgFIAMoCzIL",
+            "LlRleHVzLkNhcmQiKQoDR2V0EhAKCFBsYXllcklEGAEgASgJEhAKCFBhc3N3",
+            "b3JkGAIgASgJIh4KDlBsYXllclN5bmNEYXRhEgwKBE5hbWUYASABKAwiQwoP",
+            "UGxheWVyQ3JlYXRlUmVxEhAKCFBsYXllcklEGAEgASgJEhAKCFBhc3N3b3Jk",
+            "GAIgASgJEgwKBE5hbWUYAyABKAwiUQoPUGxheWVyQ3JlYXRlUnNwEg4KBlJl",
+            "c3VsdBgBIAEoBRIQCghQbGF5ZXJJRBgCIAEoCRIMCgROYW1lGAMgASgMEg4K",
+            "BlJlYXNvbhgEIAEoCSqFAgoKQ0xJRU5UX0NNRBIWChJDTElFTlRfQ01EX0lO",
+            "VkFMSUQQABIWChBDTElFTlRfQ01EX0JFR0lOELDqARIRCgtDTElFTlRfUElO",
+            "RxCx6gESFgoQQ0xJRU5UX0xPR0lOX1JFURC06gESFwoRQ0xJRU5UX0NSRUFU",
+            "RV9SRVEQteoBEhkKE0NMSUVOVF9BTk5PVU5DRV9SRVEQtuoBEhoKFENMSUVO",
+            "VF9KT0lOX1JPT01fUkVRELfqARIaChRDTElFTlRfUVVJVF9ST09NX1JFURC4",
+            "6gESGgoUQ0xJRU5UX0dBTUVTVEFSVF9SRVEQueoBEhQKDkNMSUVOVF9DTURf",
+            "RU5EEOiBAirTAgoKU0VSVkVSX0NNRBIWChJTRVJWRVJfQ01EX0lOVkFMSUQQ",
+            "ABIVChBTRVJWRVJfQ01EX0JFR0lOEOgHEhAKC1NFUlZFUl9QT05HEOkHEhUK",
+            "EFNFUlZFUl9MT0dJTl9SU1AQ7AcSFgoRU0VSVkVSX0NSRUFURV9SU1AQ7QcS",
+            "GAoTU0VSVkVSX0FOTk9VTkNFX1JTUBDuBxIaChVTRVJWRVJfSlVER0VfSk9J",
+            "Tl9SU1AQ7wcSGAoTU0VSVkVSX1FVSVRST09NX1JTUBDwBxIfChpTRVJWRVJf",
+            "QlJPQURDQVNUX1NFQVRUQUJMRRDxBxIZChRTRVJWRVJfR0FNRVNUQVJUX1JT",
+            "UBDyBxIfChpTRVJWRVJfQlJPQURDQVNUX0dBTUVTVEFSVBDzBxITCg5HTV9P",
+            "UEVSQVRFX1JTUBDMCBITCg5TRVJWRVJfQ01EX0VORBCQTiqUBgoRUFJPVE9f",
+            "UkVTVUxUX0NPREUSGgoWU0VSVkVSX0xPR0lOX1JFU1VMVF9PSxAAEhwKGFNF",
+            "UlZFUl9MT0dJTl9SRVNVTFRfRkFJTBABEjQKJ1NFUlZFUl9MT0dJTl9SRVNV",
+            "TFRfRkFJTF9OT19TVUNIX1BMQVlFUhD+//////////8BEiwKKFNFUlZFUl9M",
+            "T0dJTl9SRVNVTFRfRkFJTF9BTFJFQURZX0lOX0dBTUUQAxIiCh5TRVJWRVJf",
+            "TE9HSU5fUkVTVUxUX0ZBSUxfV1JPTkcQBBIWChJKT0lOUk9PTV9SRVNVTFRf",
+            "T0sQBRIvCitKT0lOUk9PTV9SRVNVTFRfRkFJTF9FWElTVElOR19QTEFZRVJf",
+            "SU5ST09NEAYSJQohSk9JTlJPT01fUkVTVUxUX0ZBSUxfTk9fU1VDSF9ST09N",
+            "EAcSJQohSk9JTlJPT01fUkVTVUxUX0ZBSUxfQkFEX1BMQVlFUklEEAgSLQop",
+            "Sk9JTlJPT01fUkVTVUxUX0ZBSUxfUExBWUVSX0FNT1VOVF9FWENFRUQQCRIo",
+            "CiRKT0lOUk9PTV9SRVNVTFRfRkFJTF9OT19FTk9VR0hfTU9ORVkQChItCilK",
+            "T0lOUk9PTV9SRVNVTFRfRkFJTF9ST09NX0FMUkVBRFlfSU5fR0FNRRALEhYK",
+            "ElFVSVRST09NX1JFU1VMVF9PSxAPEhgKFFFVSVRST09NX1JFU1VMVF9GQUlM",
+            "EBASJQohUVVJVFJPT01fUkVTVUxUX0ZBSUxfTk9fU1VDSF9ST09NEBESIwof",
+            "UVVJVFJPT01fUkVTVUxUX0ZBSUxfSU5WQUxJRF9JRBASEhAKDEdBTUVTVEFS",
+            "VF9PSxATEh8KG0dBTUVTVEFSVF9GQUlMX05PX1NVQ0hfUk9PTRAUEiEKHUdB",
+            "TUVTVEFSVF9GQUlMX05PVF9ST09NX09XTkVSEBUSIQodR0FNRVNUQVJUX0ZB",
+            "SUxfTk9fRU5PVUdIX1VTRVIQFhInCiNHQU1FU1RBUlRfRkFJTF9ST09NX0FM",
+            "UkVBRFlfSU5fR0FNRRAXYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Texus.CLIENT_CMD), typeof(global::Texus.SERVER_CMD), typeof(global::Texus.PROTO_RESULT_CODE), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.SeatTableItem), global::Texus.SeatTableItem.Parser, new[]{ "PlayerID", "SeatNumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.Card), global::Texus.Card.Parser, new[]{ "Suit", "Rank" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerTryJoin), global::Texus.PlayerTryJoin.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerJoinResult), global::Texus.PlayerJoinResult.Parser, new[]{ "PlayerID", "RoomID", "JoinResult", "SeatTable", "Money" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerTryQuitRoom), global::Texus.PlayerTryQuitRoom.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerQuitRoomResult), global::Texus.PlayerQuitRoomResult.Parser, new[]{ "PlayerID", "RoomID", "QuitResult", "SeatTable", "Money" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.SeatTableItem), global::Texus.SeatTableItem.Parser, new[]{ "PlayerId", "SeatNumber" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.BroadcastSeatTable), global::Texus.BroadcastSeatTable.Parser, new[]{ "SeatTable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.GameStart), global::Texus.GameStart.Parser, new[]{ "PlayerID", "RoomID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Texus.GameStartResult), global::Texus.GameStartResult.Parser, new[]{ "PlayerID", "RoomID", "GameStartResult_", "Flop", "Hole" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.Get), global::Texus.Get.Parser, new[]{ "PlayerID", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerSyncData), global::Texus.PlayerSyncData.Parser, new[]{ "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Texus.PlayerCreateReq), global::Texus.PlayerCreateReq.Parser, new[]{ "PlayerID", "Password", "Name" }, null, null, null),
@@ -100,6 +114,7 @@ namespace Texus {
     ///客户端请求退出房间的请求
     /// </summary>
     [pbr::OriginalName("CLIENT_QUIT_ROOM_REQ")] ClientQuitRoomReq = 30008,
+    [pbr::OriginalName("CLIENT_GAMESTART_REQ")] ClientGamestartReq = 30009,
     [pbr::OriginalName("CLIENT_CMD_END")] End = 33000,
   }
 
@@ -119,6 +134,8 @@ namespace Texus {
     /// </summary>
     [pbr::OriginalName("SERVER_QUITROOM_RSP")] ServerQuitroomRsp = 1008,
     [pbr::OriginalName("SERVER_BROADCAST_SEATTABLE")] ServerBroadcastSeattable = 1009,
+    [pbr::OriginalName("SERVER_GAMESTART_RSP")] ServerGamestartRsp = 1010,
+    [pbr::OriginalName("SERVER_BROADCAST_GAMESTART")] ServerBroadcastGamestart = 1011,
     [pbr::OriginalName("GM_OPERATE_RSP")] GmOperateRsp = 1100,
     [pbr::OriginalName("SERVER_CMD_END")] End = 10000,
   }
@@ -135,15 +152,335 @@ namespace Texus {
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_BAD_PLAYERID")] JoinroomResultFailBadPlayerid = 8,
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_PLAYER_AMOUNT_EXCEED")] JoinroomResultFailPlayerAmountExceed = 9,
     [pbr::OriginalName("JOINROOM_RESULT_FAIL_NO_ENOUGH_MONEY")] JoinroomResultFailNoEnoughMoney = 10,
+    [pbr::OriginalName("JOINROOM_RESULT_FAIL_ROOM_ALREADY_IN_GAME")] JoinroomResultFailRoomAlreadyInGame = 11,
     [pbr::OriginalName("QUITROOM_RESULT_OK")] QuitroomResultOk = 15,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL")] QuitroomResultFail = 16,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL_NO_SUCH_ROOM")] QuitroomResultFailNoSuchRoom = 17,
     [pbr::OriginalName("QUITROOM_RESULT_FAIL_INVALID_ID")] QuitroomResultFailInvalidId = 18,
+    [pbr::OriginalName("GAMESTART_OK")] GamestartOk = 19,
+    [pbr::OriginalName("GAMESTART_FAIL_NO_SUCH_ROOM")] GamestartFailNoSuchRoom = 20,
+    [pbr::OriginalName("GAMESTART_FAIL_NOT_ROOM_OWNER")] GamestartFailNotRoomOwner = 21,
+    [pbr::OriginalName("GAMESTART_FAIL_NO_ENOUGH_USER")] GamestartFailNoEnoughUser = 22,
+    [pbr::OriginalName("GAMESTART_FAIL_ROOM_ALREADY_IN_GAME")] GamestartFailRoomAlreadyInGame = 23,
   }
 
   #endregion
 
   #region Messages
+  public sealed partial class SeatTableItem : pb::IMessage<SeatTableItem> {
+    private static readonly pb::MessageParser<SeatTableItem> _parser = new pb::MessageParser<SeatTableItem>(() => new SeatTableItem());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SeatTableItem> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatTableItem() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatTableItem(SeatTableItem other) : this() {
+      playerID_ = other.playerID_;
+      seatNumber_ = other.seatNumber_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatTableItem Clone() {
+      return new SeatTableItem(this);
+    }
+
+    /// <summary>Field number for the "PlayerID" field.</summary>
+    public const int PlayerIDFieldNumber = 1;
+    private string playerID_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerID {
+      get { return playerID_; }
+      set {
+        playerID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "SeatNumber" field.</summary>
+    public const int SeatNumberFieldNumber = 2;
+    private int seatNumber_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SeatNumber {
+      get { return seatNumber_; }
+      set {
+        seatNumber_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SeatTableItem);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SeatTableItem other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerID != other.PlayerID) return false;
+      if (SeatNumber != other.SeatNumber) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerID.Length != 0) hash ^= PlayerID.GetHashCode();
+      if (SeatNumber != 0) hash ^= SeatNumber.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerID);
+      }
+      if (SeatNumber != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(SeatNumber);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerID);
+      }
+      if (SeatNumber != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatNumber);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SeatTableItem other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerID.Length != 0) {
+        PlayerID = other.PlayerID;
+      }
+      if (other.SeatNumber != 0) {
+        SeatNumber = other.SeatNumber;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PlayerID = input.ReadString();
+            break;
+          }
+          case 16: {
+            SeatNumber = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Card : pb::IMessage<Card> {
+    private static readonly pb::MessageParser<Card> _parser = new pb::MessageParser<Card>(() => new Card());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Card> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card(Card other) : this() {
+      suit_ = other.suit_;
+      rank_ = other.rank_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card Clone() {
+      return new Card(this);
+    }
+
+    /// <summary>Field number for the "suit" field.</summary>
+    public const int SuitFieldNumber = 1;
+    private int suit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Suit {
+      get { return suit_; }
+      set {
+        suit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rank" field.</summary>
+    public const int RankFieldNumber = 2;
+    private int rank_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Rank {
+      get { return rank_; }
+      set {
+        rank_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Card);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Card other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Suit != other.Suit) return false;
+      if (Rank != other.Rank) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Suit != 0) hash ^= Suit.GetHashCode();
+      if (Rank != 0) hash ^= Rank.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Suit != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Suit);
+      }
+      if (Rank != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Rank);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Suit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Suit);
+      }
+      if (Rank != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Rank);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Card other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Suit != 0) {
+        Suit = other.Suit;
+      }
+      if (other.Rank != 0) {
+        Rank = other.Rank;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Suit = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Rank = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class PlayerTryJoin : pb::IMessage<PlayerTryJoin> {
     private static readonly pb::MessageParser<PlayerTryJoin> _parser = new pb::MessageParser<PlayerTryJoin>(() => new PlayerTryJoin());
     private pb::UnknownFieldSet _unknownFields;
@@ -152,7 +489,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -312,7 +649,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -545,7 +882,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -702,7 +1039,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -927,163 +1264,6 @@ namespace Texus {
 
   }
 
-  public sealed partial class SeatTableItem : pb::IMessage<SeatTableItem> {
-    private static readonly pb::MessageParser<SeatTableItem> _parser = new pb::MessageParser<SeatTableItem>(() => new SeatTableItem());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<SeatTableItem> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SeatTableItem() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SeatTableItem(SeatTableItem other) : this() {
-      playerId_ = other.playerId_;
-      seatNumber_ = other.seatNumber_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SeatTableItem Clone() {
-      return new SeatTableItem(this);
-    }
-
-    /// <summary>Field number for the "PlayerId" field.</summary>
-    public const int PlayerIdFieldNumber = 1;
-    private string playerId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PlayerId {
-      get { return playerId_; }
-      set {
-        playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "SeatNumber" field.</summary>
-    public const int SeatNumberFieldNumber = 2;
-    private int seatNumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int SeatNumber {
-      get { return seatNumber_; }
-      set {
-        seatNumber_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as SeatTableItem);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SeatTableItem other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (PlayerId != other.PlayerId) return false;
-      if (SeatNumber != other.SeatNumber) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (PlayerId.Length != 0) hash ^= PlayerId.GetHashCode();
-      if (SeatNumber != 0) hash ^= SeatNumber.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (PlayerId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(PlayerId);
-      }
-      if (SeatNumber != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(SeatNumber);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (PlayerId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerId);
-      }
-      if (SeatNumber != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SeatNumber);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SeatTableItem other) {
-      if (other == null) {
-        return;
-      }
-      if (other.PlayerId.Length != 0) {
-        PlayerId = other.PlayerId;
-      }
-      if (other.SeatNumber != 0) {
-        SeatNumber = other.SeatNumber;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            PlayerId = input.ReadString();
-            break;
-          }
-          case 16: {
-            SeatNumber = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class BroadcastSeatTable : pb::IMessage<BroadcastSeatTable> {
     private static readonly pb::MessageParser<BroadcastSeatTable> _parser = new pb::MessageParser<BroadcastSeatTable>(() => new BroadcastSeatTable());
     private pb::UnknownFieldSet _unknownFields;
@@ -1092,7 +1272,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1205,6 +1385,388 @@ namespace Texus {
 
   }
 
+  public sealed partial class GameStart : pb::IMessage<GameStart> {
+    private static readonly pb::MessageParser<GameStart> _parser = new pb::MessageParser<GameStart>(() => new GameStart());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GameStart> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStart() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStart(GameStart other) : this() {
+      playerID_ = other.playerID_;
+      roomID_ = other.roomID_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStart Clone() {
+      return new GameStart(this);
+    }
+
+    /// <summary>Field number for the "PlayerID" field.</summary>
+    public const int PlayerIDFieldNumber = 1;
+    private string playerID_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerID {
+      get { return playerID_; }
+      set {
+        playerID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "RoomID" field.</summary>
+    public const int RoomIDFieldNumber = 2;
+    private int roomID_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomID {
+      get { return roomID_; }
+      set {
+        roomID_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GameStart);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GameStart other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerID != other.PlayerID) return false;
+      if (RoomID != other.RoomID) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerID.Length != 0) hash ^= PlayerID.GetHashCode();
+      if (RoomID != 0) hash ^= RoomID.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerID);
+      }
+      if (RoomID != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RoomID);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerID);
+      }
+      if (RoomID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomID);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GameStart other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerID.Length != 0) {
+        PlayerID = other.PlayerID;
+      }
+      if (other.RoomID != 0) {
+        RoomID = other.RoomID;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PlayerID = input.ReadString();
+            break;
+          }
+          case 16: {
+            RoomID = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class GameStartResult : pb::IMessage<GameStartResult> {
+    private static readonly pb::MessageParser<GameStartResult> _parser = new pb::MessageParser<GameStartResult>(() => new GameStartResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GameStartResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStartResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStartResult(GameStartResult other) : this() {
+      playerID_ = other.playerID_;
+      roomID_ = other.roomID_;
+      gameStartResult_ = other.gameStartResult_;
+      flop_ = other.flop_.Clone();
+      hole_ = other.hole_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GameStartResult Clone() {
+      return new GameStartResult(this);
+    }
+
+    /// <summary>Field number for the "PlayerID" field.</summary>
+    public const int PlayerIDFieldNumber = 1;
+    private string playerID_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerID {
+      get { return playerID_; }
+      set {
+        playerID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "RoomID" field.</summary>
+    public const int RoomIDFieldNumber = 2;
+    private int roomID_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomID {
+      get { return roomID_; }
+      set {
+        roomID_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "GameStartResult" field.</summary>
+    public const int GameStartResult_FieldNumber = 3;
+    private int gameStartResult_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int GameStartResult_ {
+      get { return gameStartResult_; }
+      set {
+        gameStartResult_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "flop" field.</summary>
+    public const int FlopFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Texus.Card> _repeated_flop_codec
+        = pb::FieldCodec.ForMessage(34, global::Texus.Card.Parser);
+    private readonly pbc::RepeatedField<global::Texus.Card> flop_ = new pbc::RepeatedField<global::Texus.Card>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Texus.Card> Flop {
+      get { return flop_; }
+    }
+
+    /// <summary>Field number for the "hole" field.</summary>
+    public const int HoleFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Texus.Card> _repeated_hole_codec
+        = pb::FieldCodec.ForMessage(42, global::Texus.Card.Parser);
+    private readonly pbc::RepeatedField<global::Texus.Card> hole_ = new pbc::RepeatedField<global::Texus.Card>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Texus.Card> Hole {
+      get { return hole_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GameStartResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GameStartResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerID != other.PlayerID) return false;
+      if (RoomID != other.RoomID) return false;
+      if (GameStartResult_ != other.GameStartResult_) return false;
+      if(!flop_.Equals(other.flop_)) return false;
+      if(!hole_.Equals(other.hole_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerID.Length != 0) hash ^= PlayerID.GetHashCode();
+      if (RoomID != 0) hash ^= RoomID.GetHashCode();
+      if (GameStartResult_ != 0) hash ^= GameStartResult_.GetHashCode();
+      hash ^= flop_.GetHashCode();
+      hash ^= hole_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerID);
+      }
+      if (RoomID != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RoomID);
+      }
+      if (GameStartResult_ != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(GameStartResult_);
+      }
+      flop_.WriteTo(output, _repeated_flop_codec);
+      hole_.WriteTo(output, _repeated_hole_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerID);
+      }
+      if (RoomID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomID);
+      }
+      if (GameStartResult_ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GameStartResult_);
+      }
+      size += flop_.CalculateSize(_repeated_flop_codec);
+      size += hole_.CalculateSize(_repeated_hole_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GameStartResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerID.Length != 0) {
+        PlayerID = other.PlayerID;
+      }
+      if (other.RoomID != 0) {
+        RoomID = other.RoomID;
+      }
+      if (other.GameStartResult_ != 0) {
+        GameStartResult_ = other.GameStartResult_;
+      }
+      flop_.Add(other.flop_);
+      hole_.Add(other.hole_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PlayerID = input.ReadString();
+            break;
+          }
+          case 16: {
+            RoomID = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            GameStartResult_ = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            flop_.AddEntriesFrom(input, _repeated_flop_codec);
+            break;
+          }
+          case 42: {
+            hole_.AddEntriesFrom(input, _repeated_hole_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Get : pb::IMessage<Get> {
     private static readonly pb::MessageParser<Get> _parser = new pb::MessageParser<Get>(() => new Get());
     private pb::UnknownFieldSet _unknownFields;
@@ -1213,7 +1775,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1370,7 +1932,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1499,7 +2061,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1684,7 +2246,7 @@ namespace Texus {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Texus.TexusRoomReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
