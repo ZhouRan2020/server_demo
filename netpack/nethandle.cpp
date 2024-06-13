@@ -342,24 +342,24 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 		auto room = gsreq.roomid();
 		User user_trigger{client,gsreq.playerid() };
 
-		Texus::GameStartResult gsrsp;
-		gsrsp.set_roomid(room);
+		Texus::GameStartResult gsrsp_fail;
+		gsrsp_fail.set_roomid(room);
 
 		if (room >= g_rooms.size()) {
-			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_SUCH_ROOM);
-			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+			gsrsp_fail.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_SUCH_ROOM);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp_fail);
 		}
 		else if (g_rooms[room].users.size() < USER_SIZE_BAR) {
-			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_ENOUGH_USER);
-			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+			gsrsp_fail.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NO_ENOUGH_USER);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp_fail);
 		}
 		else if (g_rooms[room].users[0] != user_trigger) {
-			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NOT_ROOM_OWNER);
-			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+			gsrsp_fail.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_NOT_ROOM_OWNER);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp_fail);
 		}
 		else if (g_rooms[room].gameon) {
-			gsrsp.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_ROOM_ALREADY_IN_GAME);
-			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
+			gsrsp_fail.set_gamestartresult(Texus::PROTO_RESULT_CODE::GAMESTART_FAIL_ROOM_ALREADY_IN_GAME);
+			SendPBToClient(user_trigger.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp_fail);
 		}
 		else {
 			g_rooms[room].reset();
@@ -378,7 +378,7 @@ bool _OnPackHandle(uv_tcp_t* client, Packet* pack)
 					newflop->set_suit(g_rooms[room].flop[i].s);
 					newflop->set_rank(g_rooms[room].flop[i].r);
 				}
-				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_BROADCAST_GAMESTART, &gsrsp);
+				SendPBToClient(user.tcp, Texus::SERVER_CMD::SERVER_GAMESTART_RSP, &gsrsp);
 			}
 		}
 		

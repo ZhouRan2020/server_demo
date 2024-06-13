@@ -2,14 +2,13 @@
 constexpr auto INIT_MONEY = 1000000;
 constexpr auto MONEY_BAR = 100000;
 constexpr auto USER_SIZE_BAR = 1;
-enum Rank {
-	J = 11, Q, K, A
-};
 
 enum Suit {
 	spade, heart, diamond, club
 };
-
+enum Rank {
+	J = 11, Q, K, A
+};
 struct Card {
 	Suit s;
 	int r;
@@ -37,6 +36,7 @@ struct User {
 
 struct Room {
 	static const int user_lim = 10;
+
 	vector<User> users;
 
 	int gameon = 0;
